@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: space-between; /* Align buttons with space between them */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+  <div class="hero-section">
+  <h1 class="hero-heading">File Processing System</h1>
+  <!-- <p class="hero-description">Explore and learn about the fascinating world of DBMS.</p> -->
+</div>
+
+
+<ul class="horizontal-nav">
+  <li><a href="all.html" target="_blank">Home</a></li>
+  <li><a href="index.html">DBMS</a></li>
+  <li><a href="all.html" target="_blank">OOPS</a></li>
+  <li><a href="all.html" target="_blank">DSA</a></li>
+</ul>
+
+<ul class="vertical-nav">
+  <li style="font-size: 26px;"><i class="fas fa-book"></i> Introduction</li>
+  <li><a href="Basics.html">Basics of DBMS</a></li>
+  <li><a href="Application of DBMS.html">Application of DBMS</a></li>
+  <li><a class="active" href="FPS.html">File Processing System</a></li>
+  <li><a href="Definitions.html">DBMS Terminologies</a></li>
+  <li><a href="ANSI and SPARC model.html">ANSI and SPARC model</a></li>
+  <li><a href="Client-Server Architecture.html">Client-Server Architecture</a></li>
+  <li><a href="User and DBA.html">User and DBA</a></li>
+  <li><a href="Database System Architecture.html">Database System Architecture</a></li>
+  <li style="font-size: 26px;"><i class="fas fa-book">SQL Queries</i></li>
+  <li><a href="SQL basics.html">SQL Basics</a></li>
+  <li><a href="SQL Commands.html">SQL Commands</a></li>
+  <li><a href="DDL Commands.html">DDL Commands</a></li>
+  <li><a href="DML Commands.html">DML Commands</a></li>
+  <li><a href="DCL Commands.html">DCL Commands</a></li>
+  <li><a href="TCL Commands.html">TCL Commands</a></li>
+  <li><a href="DQL Commands.html">DQL Commands</a></li>
+  <li><a href="Operators.html">Operators</a></li>
+  <li><a href="Predicates.html">Predicates</a></li>
+  <li><a href="Functions.html">Functions</a></li>
+</ul>
+
+<div class="content">
+  <h3>What is File Processing System?</h3>
+  <p>File Processing System (FPS) is a way of storing, retrieving and manipulating data which is present in various files.</p>
+  <strong><p>Some Key Features of FPS :-</p></strong>
+  <ol>
+    <li><strong>File Creation and Deletion :-</strong> The file system enables users and applications to create new files and delete existing ones.</li>
+    <li><strong>File Organization :-</strong> It determines how files are organized on the storage media, such as how data is allocated and stored in blocks or clusters.</li>
+    <li><strong>File Access and Retrieval :-</strong> The file system facilitates reading and writing data from and to files, ensuring that the correct data is retrieved and that updates are appropriately saved.</li>
+    <li><strong>File Security :-</strong> File systems implement access control mechanisms to restrict or grant permissions for reading, writing, and executing files.</li>
+  </ol>
+  <h3>Advantages of FPS :-</h3>
+  <ul>
+    <li><strong>Cost Friendly :-</strong> We don't have to buy any software as we can use version which are already installed in our Systems.</li>
+    <li><strong>Easy to use :-</strong> File systems require very basic learning and understanding, hence, it can be easily used.</li>
+    <li><strong>High scalability :-</strong> One can very easily switch from smaller to larger files as per his needs.</li>
+  </ul>
+  <h3>Disadvantages of FPS :-</h3>
+  <ul>
+    <li><strong>Data redundancy :-</strong> Data redundancy in a file processing system occurs when the same data is duplicated or repeated in multiple files. Since data is stored in separate files, it is common to have multiple copies of the same information scattered across various files.</li>
+    <li><strong>Data Inconsistency :-</strong> Data inconsistency in a file processing system occurs when the same data exists in multiple files but is not synchronized or updated consistently.</li>
+    <li><strong>Data Isolation :-</strong>  In an FPS, data is isolated and fragmented across different files, making it difficult to access and share data among multiple applications. This lack of integration hinders data sharing and can result in data duplication, leading to inefficiencies and difficulties in data maintenance.</li>
+    <li><strong>Data Security :-</strong> FPS often lack robust security measures compared to modern DBMS. With decentralized data storage, it becomes harder to implement comprehensive security controls, leaving data more vulnerable to unauthorized access or breaches.</li>
+  </ul>
+    <br>
+  <br>
+ <div class="button-container">
+        <button id="leftButton">&lt; Previous</button>
+        <button id="rightButton">Next &gt;</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("leftButton").addEventListener("click", function() {
+    window.location.href = "Application of DBMS.html";
+  });
+
+  document.getElementById("rightButton").addEventListener("click", function() {
+    window.location.href = "Definitions.html";
+  });
+</script>
+
+</body>
+</html>

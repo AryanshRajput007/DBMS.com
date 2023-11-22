@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: space-between; /* Align buttons with space between them */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+  <h1 class="hero-heading">ANSI and SPARC Model</h1>
+  <!-- <p class="hero-description">Explore and learn about the fascinating world of DBMS.</p> -->
+</div>
+
+<ul class="horizontal-nav">
+  <li><a href="all.html" target="_blank">Home</a></li>
+  <li><a href="index.html">DBMS</a></li>
+  <li><a href="all.html" target="_blank">OOPS</a></li>
+  <li><a href="all.html" target="_blank">DSA</a></li>
+</ul>
+
+<ul class="vertical-nav">
+  <li style="font-size: 26px;"><i class="fas fa-book">Introduction</i></li>
+  <li><a href="Basics.html" >Basics of DBMS</a></li>
+  <li><a href="Application of DBMS.html">Application of DBMS</a></li>
+  <li><a href="FPS.html">File Processing System</a></li>
+  <li><a href="Definitions.html">DBMS Terminologies</a></li>
+  <li><a class="active" href="ANSI and SPARC model.html">ANSI and SPARC model</a></li>
+  <li><a href="Client-Server Architecture.html">Client-Server Architecture</a></li>
+  <li><a href="User and DBA.html">User and DBA</a></li>
+  <li><a href="Database System Architecture.html">Database System Architecture</a></li>
+</ul>
+
+<div class="content">
+  <h3>What is ANSI and SPARC Model ?</h3>
+  <p>The ANSI/SPARC model is a conceptual model for Database Management Systems (DBMS) that was developed by the American National Standards Institute (ANSI) and the Standards Planning and Requirements Committee (SPARC) in the late 1970s.</p>
+  <p> It provides a standard framework for understanding the components and interactions of a database system. The ANSI/SPARC model is also known as the "three-schema architecture" because it defines three levels of abstraction or schemas within a DBMS.</p>
+  <strong><p>These three schemas are as follows :- </p></strong>
+ <ul>
+   <strong><li>External Schema (View Level) :-</li></strong>
+   <p>The External Schema, also known as the View Level, represents the user's view of the database. It defines how individual users or applications perceive and access the data. Each external schema corresponds to a specific user or group of users and provides a customized view of the data that is relevant to their needs. Users interact with the database through these external schemas, which shield them from the complexities of the underlying data organization. We use data Abstraction to hide irrelevant complexities from the user.</p> 
+   <strong><li>Conceptual Schema (Logical Level) :-</li></strong>
+   <p>The Conceptual Schema, also known as the Logical Level, represents the entire database in a unified, logical manner. It provides an abstract representation of the data, focusing on the overall data structure, relationships, and constraints. The conceptual schema acts as an intermediary between the external schemas and the physical database storage. It helps to achieve data independence by separating the logical representation of data from its physical storage details.</p>
+   <strong><li>Internal Schema (Physical Level) :-</li></strong>
+   <p>The Internal Schema, also known as the Physical Level, describes how data is physically stored and organized in the storage media (e.g., disks). It deals with the low-level details of data storage, such as data storage formats, indexing methods, and access paths. The internal schema is specific to the DBMS implementation and interacts directly with the operating system and storage devices.</p>
+ </ul> 
+ <p>The ANSI/SPARC model provides a clear separation of concerns, making it easier to design, develop, and maintain complex database systems. It enables data independence, allowing changes to be made to one schema without affecting the others. This model has been influential in shaping the design and implementation of modern database systems, and it remains a fundamental concept in the field of database management.</p>
+ <br>
+ <br>
+
+    <img src="ANSI model.png" class="imgmain">
+
+<h3>Data Independence</h3>
+  <p>Data independence is a fundamental concept in Database Management Systems (DBMS) that refers to the ability to make changes to the database's internal structure without affecting the external applications or programs that use the data. It allows for modifications to be made to the database without requiring changes to be made to the applications that access or interact with the data.</p>   
+  <h3>There are two types of data independence :- </h3>
+  <ul>
+    <strong><li>Logical Data Independence :-</li></strong>
+    <p> Logical data independence relates to the ability to modify the logical or conceptual schema of the database without impacting the external schema and applications. This means that changes in the database organization, such as adding or removing tables, altering relationships, or modifying data types, should not affect the way applications retrieve or manipulate data.</p>
+    <p>For example, if a new attribute is added to a table in the database, applications accessing data through the external schema should continue to function without any code changes.</p>
+    <strong><li>Physical Data Independence :-</li></strong>
+    <p>Physical data independence refers to the ability to modify the physical storage and implementation details of the database without affecting the conceptual or external schemas. Changes in the physical storage, such as moving data to different disks or using a different indexing technique, should not impact the way data is accessed and manipulated by applications.</p>
+    <p>For instance, if the database is moved from one server to another, the external applications should not require changes to connect and work with the data.</p>
+  </ul>
+  <img src="Data independence.png" class="imgmain">
+
+
+  <!--  <div class="code-block">
+    <pre class="code-text">
+      create database DB;
+    </pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div> -->
+    <br>
+  <br>
+
+ <div class="button-container">
+        <button id="leftButton">&lt; Previous</button>
+        <button id="rightButton">Next &gt;</button>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("leftButton").addEventListener("click", function() {
+    window.location.href = "Definitions.html";
+  });
+
+  document.getElementById("rightButton").addEventListener("click", function() {
+    window.location.href = "Client-Server Architecture.html";
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: space-between; /* Align buttons with space between them */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+  <h1 class="hero-heading">Application of DBMS</h1>
+  <!-- <p class="hero-description">Explore and learn about the fascinating world of DBMS.</p> -->
+</div>
+
+<ul class="horizontal-nav">
+  <li><a href="all.html" target="_blank">Home</a></li>
+  <li><a href="index.html">DBMS</a></li>
+  <li><a href="all.html" target="_blank">OOPS</a></li>
+  <li><a href="all.html" target="_blank">DSA</a></li>
+</ul>
+
+<ul class="vertical-nav">
+  <li style="font-size: 26px;"><i class="fas fa-book"></i> Introduction</li>
+  <li><a href="Basics.html">Basics of DBMS</a></li>
+  <li><a class="active" href="Application of DBMS.html">Application of DBMS</a></li>
+  <li><a href="FPS.html">File Processing System</a></li>
+  <li><a href="Definitions.html">DBMS Terminologies</a></li>
+  <li><a href="ANSI and SPARC model.html">ANSI and SPARC model</a></li>
+  <li><a href="Client-Server Architecture.html">Client-Server Architecture</a></li>
+  <li><a href="User and DBA.html">User and DBA</a></li>
+  <li><a href="Database System Architecture.html">Database System Architecture</a></li>
+</ul>
+
+<div class="content">
+  
+  <h3>The application of Database Management System are as Follows :-</h3>
+  <ol>
+    <li>E-Commerce (Flikart, Amazon, etc)</li>
+    <li>Online Television Streaming (Netflix, Amazon Prime etc...)</li>
+    <li>Social Media (WhatsApp, Instagram, Threads, LinkedIn etc...)</li>
+    <li>Banking & Insurance</li>
+    <li>Airline & Railway</li>
+    <li>Universities and Colleges/Schools</li>
+    <li>Library Management System</li>
+    <li>Human Resource Department</li>
+    <li>Hospitals and Medical Stores</li>
+    <li>Government Organizations</li>
+  </ol>
+  <br>
+  <br>
+ <div class="button-container">
+        <button id="leftButton">&lt; Previous</button>
+        <button id="rightButton">Next &gt;</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("leftButton").addEventListener("click", function() {
+    window.location.href = "Basics.html";
+  });
+
+  document.getElementById("rightButton").addEventListener("click", function() {
+    window.location.href = "FPS.html";
+  });
+</script>
+
+</body>
+</html>

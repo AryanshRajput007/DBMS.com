@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: space-between; /* Align buttons with space between them */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+  <h1 class="hero-heading">E-R Model</h1>
+  <!-- <p class="hero-description">Explore and learn about the fascinating world of DBMS.</p> -->
+</div>
+
+<ul class="horizontal-nav">
+  <li><a href="all.html" target="_blank">Home</a></li>
+  <li><a href="index.html">DBMS</a></li>
+  <li><a href="all.html" target="_blank">OOPS</a></li>
+  <li><a href="all.html" target="_blank">DSA</a></li>
+</ul>
+
+<ul class="vertical-nav">
+  <li style="font-size: 26px;"><i class="fas fa-book">Introduction</i></li>
+  <li><a href="Basics.html" >Basics of DBMS</a></li>
+  <li><a href="Application of DBMS.html">Application of DBMS</a></li>
+  <li><a href="FPS.html">File Processing System</a></li>
+  <li><a href="Definitions.html">DBMS Terminologies</a></li>
+  <li><a href="ANSI and SPARC model.html">ANSI and SPARC model</a></li>
+  <li><a href="Client-Server Architecture.html">Client-Server Architecture</a></li>
+  <li><a href="User and DBA.html">User and DBA</a></li>
+  <li><a href="Database System Architecture.html">Database System Architecture</a></li>
+  <li style="font-size: 26px;"><i class="fas fa-book">SQL Queries</i></li>
+  <li><a href="SQL basics.html">SQL Basics</a></li>
+  <li><a href="SQL Commands.html">SQL Commands</a></li>
+  <li><a href="DDL Commands.html">DDL Commands</a></li>
+  <li><a href="DML Commands.html">DML Commands</a></li>
+  <li><a href="DCL Commands.html">DCL Commands</a></li>
+  <li><a href="TCL Commands.html">TCL Commands</a></li>
+  <li><a href="DQL Commands.html">DQL Commands</a></li>
+  <li><a href="Operators.html">Operators</a></li>
+  <li><a class="active" href="Predicates.html">Predicates</a></li>
+  <li><a href="Functions.html">Functions</a></li>
+</ul>
+
+<div class="content">
+    <h3>What are Attributes ?</h3>
+    <i><p>Attributes in the context of a database refer to the properties or characteristics that describe entities (objects or concepts) within an entity set. Attributes provide detailed information about the entities and are used to store, retrieve, and manipulate data.</p></i>
+    <p>Here are the main types of attributes listed below :-</p>
+    <ul>
+        <li><strong>Simple and Composite Attributes</strong></li>
+        <li><strong>Single-Valued and Multi-Valued Attributes</strong></li>
+        <li><strong>Stored and Derived Attributes</strong></li>
+        <li><strong>Complex Attributes</strong></li>
+        <li><strong>Key Attributes</strong></li>
+    </ul>
+    <h3>Simple and Composite Attributes</h3>
+    <ul>
+        <li><strong>Simple Attribute</strong>
+            <ul>
+        <ul>
+            <li>A simple attribute is an attribute that cannot be divided any further into meaningful components.</li>
+            <li>It represents an atomic, indivisible value associated with an entity.</li>
+            <li>Example: In a "Consumer" entity set, "CPI" is a simple attribute.</li>
+        </ul>
+        </ul>
+        <img src="Simple Attribute.jpg" class="imgmain" alt="Simple Attribute">
+        </li>
+        <li><strong>Composite Attribute</strong>
+        <ul>
+        <ul>
+            <li>A composite attribute is an attribute that can be divided into sub-parts, each with its own meaning.</li>
+            <li>It represents a structured value composed of multiple components.</li>
+            <li>Example: In a "Name" attribute, you can have sub-components like "First Name", "Last Name" and "Middle Name".</li>
+        </ul>
+        </ul>
+        <img src="Composite Attribute.jpg" class="imgmain" alt="Composite Attribute">
+        </li>
+    </ul>
+    <h3>Single-Valued and Multi-Valued Attributes</h3>
+    <ul>
+        <li><strong>Single-Valued Attribute</strong>
+        <ul>
+        <ul>
+            <li>A single-valued attribute holds a single value for each entity.</li>
+            <li>It does not allow multiple values or a list of values.</li>
+            <li>Example: "Birthdate" is a single-valued attribute for a "Person."</li>
+        </ul>
+        </ul>
+        <img src="Single Valued Attribute.jpg" class="imgmain" alt="Single-Valued Attribute">
+        </li>
+        <li><strong>Multi-Valued Attribute</strong>
+        <ul>
+        <ul>
+            <li>A multi-valued attribute can hold multiple values or a list of values for each entity.</li>
+            <li>Example: A "EmailID" attribute for a "Contact" entity could be multi-valued because a person may have multiple Email Addresses.</li>
+        </ul>
+        </ul>
+        <img src="Multi Valued Attribute.jpg" class="imgmain" alt="Multi-Valued Attribute">
+        </li>
+    </ul>
+    <h3>Stored and Derived Attributes</h3>
+    <ul>
+        <li><strong>Stored Attribute</strong>
+            <ul>
+        <ul>
+            <li>A stored attribute is one whose value is explicitly stored in the database.</li>
+            <li>It is part of the database schema and is typically retrieved directly from the database.</li>
+            <li>Example: "Height" of a "Person" entity is a stored attribute.</li>
+        </ul>
+        </ul>
+        <img src="Stored Attribute.jpg" class="imgmain" alt="Stored Attribute">
+        </li>
+        <li><strong>Derived Attributes</strong>
+            <ul>
+        <ul>
+            <li>A derived attribute is not explicitly stored in the database but can be computed or derived from other attributes.</li>
+            <li>Example: "Age" of a "Person" can be derived from the "DateOfBirth" attribute by subtracting the birthdate from the current date.</li>
+        </ul>
+        </ul>
+        <img src="Derived Attribute.jpg" class="imgmain" alt="Derived Attribute">
+        </li>
+    </ul>
+    <h3>Complex Attributes</h3>
+    <ul>
+        <li><strong>Complex Attributes</strong></li>
+        <ul>
+            <ul>
+                <li>A complex attribute is an attribute that can have its own attributes (sub-attributes) within it.</li>
+                <li>It is a combination of simple or composite attributes.</li>
+                <li>Example: An "Name" attribute may have sub-attributes like "First Name", "Middle Name" and "Last Name" each of which can be simple or composite attributes themselves.</li>
+            </ul>
+        </ul>
+        <img src="Composite Attribute.jpg" class="imgmain" alt="Complex Attribute">
+    </ul>
+    <h3>Key Attributes</h3>
+    <ul>
+        <li><strong>Key Attribute</strong></li>
+        <ul>
+            <ul>
+                <li>A key attribute is an attribute that is used to uniquely identify instances of an entity within an entity set.</li>
+                <li>It ensures that no two entities in the same set have the same value for this attribute.</li>
+                <li>Example: In a "Student" entity set, "Roll_No" can be a key attribute, ensuring that each student has a unique identifier.</li>
+            </ul>
+        </ul>
+        <img src="Key Attribute.jpg" class="imgmain" alt="Key Attribute">
+    </ul>
+    <h3>Descriptive Attribute</h3>
+    <ul>
+        <ul>
+            <li>If any relationship has a attribute like entity then its known as Descriptive Attributes.</li>
+            <li>Example: Student had been issued degree certificate on 25/5/2020.Certificate date is an attribute of relationship.</li>
+        </ul>
+        <img src="Descriptive Attribute.jpg" class="imgmain" alt="Descriptive Attribute">
+    </ul>
+    <p><strong>Now let's see an example which covers all the attribute listed above :-</strong></p>
+    <img src="All Attribute.jpg" class="imgmain" alt="An example of all attributes">
+        <br>
+    <br>
+    <div class="button-container">
+        <button id="leftButton">&lt; Previous</button>
+        <button id="rightButton">Next &gt;</button>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("leftButton").addEventListener("click", function() {
+    window.location.href = "Functions.html";
+  });
+
+  document.getElementById("rightButton").addEventListener("click", function() {
+    window.location.href = "all.html";
+  });
+</script>
+</body>
+</html>

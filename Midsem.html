@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: space-between; /* Align buttons with space between them */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+  <h1 class="hero-heading">Database System Architecture</h1>
+  <!-- <p class="hero-description">Explore and learn about the fascinating world of DBMS.</p> -->
+</div>
+
+<ul class="horizontal-nav">
+  <li><a href="all.html" target="_blank">Home</a></li>
+  <li><a href="index.html">DBMS</a></li>
+  <li><a href="all.html" target="_blank">OOPS</a></li>
+  <li><a href="all.html" target="_blank">DSA</a></li>
+</ul>
+
+<ul class="vertical-nav">
+  <li style="font-size: 26px;"><i class="fas fa-book"></i> Introduction</li>
+  <li><a href="Basics.html">Basics of DBMS</a></li>
+  <li><a href="Application of DBMS.html">Application of DBMS</a></li>
+  <li><a href="FPS.html">File Processing System</a></li>
+  <li><a href="Definitions.html">DBMS Terminologies</a></li>
+  <li><a href="ANSI and SPARC model.html">ANSI and SPARC model</a></li>
+  <li><a href="Client-Server Architecture.html">Client-Server Architecture</a></li>
+  <li><a href="User and DBA.html">User and DBA</a></li>
+  <li><a class="active" href="Database System Architecture.html">Database System Architecture</a></li>
+</ul>
+<div class="content">
+
+<h2>MYSQL Syntax's</h2>
+<ul>
+<li><h3>Create Table</h3></li>
+   <div class="code-block">
+    <pre class="code-text">
+    CREATE TABLE table_name (
+    column1 datatype [constraints],
+    column2 datatype [constraints],
+    ...
+    );</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>Alter Table</h3></li>
+  <div class="code-block">
+    <pre class="code-text">
+    ALTER TABLE table_name
+    ADD column_name datatype [constraints];</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+   <div class="code-block">
+    <pre class="code-text">
+    ALTER TABLE table_name
+    DROP column_name;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>Drop Table</h3></li>
+    <div class="code-block">
+    <pre class="code-text">
+    DROP TABLE table_name;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div> 
+  <li><h3>Insert </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    INSERT INTO table_name (column1, column2, ...)
+    VALUES (value1, value2, ...);</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>Update</h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    UPDATE table_name
+    SET column1 = value1, column2 = value2, ...
+    WHERE condition;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>Delete</h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    DELETE FROM table_name
+    WHERE condition;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>Select </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT column1, column2, ...
+    FROM table_name
+    WHERE condition;
+</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>  
+  <li><h3>Commit </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    COMMIT;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>Rollback </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    ROLLBACK;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>Save Point </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SAVEPOINT savepoint_name;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>Grant </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    GRANT privilege_name
+    ON object_name
+    TO user_name;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>Revoke </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    REVOKE privilege_name
+    ON object_name
+    FROM user_name;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <h2>Operations</h2>
+  <li><h3>And </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE condition1 AND condition2;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>OR </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE condition1 OR condition2;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>NOT</h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE NOT condition;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>Equal to (=) </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE column_name = value;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>Not Equal (&lt;&gt; or !=) </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE column_name &lt;&gt; value;
+    or
+    SELECT * FROM table_name WHERE column_name != value;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <li><h3>Greater Than (>) </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE column_name > value;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+    <li><h3>Less Than (<)</h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE column_name < value;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+    <li><h3>Greater Than or Equal to</h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE column_name >= value;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+    <li><h3>Less Than or Equal to </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE column_name <= value;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+    <li><h3>Between... And...</h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE column_name BETWEEN value1 AND value2;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+    <li><h3>Like </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE column_name LIKE 'abc%';</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+    <li><h3>IN </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE column_name IN (value1, value2, ...);</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+    <li><h3>Greater Than </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE column_name > value;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+    <li><h3>Greater Than </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE column_name > value;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+    <li><h3>Greater Than </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE column_name > value;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+    <li><h3>Greater Than </h3></li>
+     <div class="code-block">
+    <pre class="code-text">
+    SELECT * FROM table_name WHERE column_name > value;</pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+</ul>
+    <br>
+    <br>
+
+ <div class="button-container">
+        <button id="leftButton">&lt; Previous</button>
+        <button id="rightButton">Next &gt;</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("leftButton").addEventListener("click", function() {
+    window.location.href = "User and DBA.html";
+  });
+
+  document.getElementById("rightButton").addEventListener("click", function() {
+    window.location.href = "all.html";
+  });
+</script>
+
+</body>
+</html>

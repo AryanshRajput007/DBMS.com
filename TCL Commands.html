@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: space-between; /* Align buttons with space between them */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+  <h1 class="hero-heading">SQL Basics</h1>
+  <!-- <p class="hero-description">Explore and learn about the fascinating world of DBMS.</p> -->
+</div>
+
+<ul class="horizontal-nav">
+  <li><a href="all.html" target="_blank">Home</a></li>
+  <li><a href="index.html">DBMS</a></li>
+  <li><a href="all.html" target="_blank">OOPS</a></li>
+  <li><a href="all.html" target="_blank">DSA</a></li>
+</ul>
+
+<ul class="vertical-nav">
+  <li style="font-size: 26px;"><i class="fas fa-book">Introduction</i></li>
+  <li><a href="Basics.html" >Basics of DBMS</a></li>
+  <li><a href="Application of DBMS.html">Application of DBMS</a></li>
+  <li><a href="FPS.html">File Processing System</a></li>
+  <li><a href="Definitions.html">DBMS Terminologies</a></li>
+  <li><a href="ANSI and SPARC model.html">ANSI and SPARC model</a></li>
+  <li><a href="Client-Server Architecture.html">Client-Server Architecture</a></li>
+  <li><a href="User and DBA.html">User and DBA</a></li>
+  <li><a href="Database System Architecture.html">Database System Architecture</a></li>
+  <li style="font-size: 26px;"><i class="fas fa-book">SQL Queries</i></li>
+  <li><a href="SQL basics.html">SQL Basics</a></li>
+  <li><a href="SQL Commands.html">SQL Commands</a></li>
+  <li><a href="DDL Commands.html">DDL Commands</a></li>
+  <li><a href="DML Commands.html">DML Commands</a></li>
+  <li><a href="DCL Commands.html">DCL Commands</a></li>
+  <li><a class="active" href="TCL Commands.html">TCL Commands</a></li>
+  <li><a href="DQL Commands.html">DQL Commands</a></li>
+  <li><a href="Operators.html">Operators</a></li>
+  <li><a href="Predicates.html">Predicates</a></li>
+  <li><a href="Functions.html">Functions</a></li>
+</ul>
+
+<div class="content">
+    <h3> What are TCL Commands ?</h3>
+    <i><p>In MySQL, Transaction Control Language (TCL) commands are used to manage transactions in a database. Transactions are sequences of one or more SQL statements that are executed as a single unit of work, either all succeeding or all failing. TCL commands allow you to control the flow and integrity of transactions. </p>
+    <h3>Here are the main TCL commands :-</h3>
+    <ul>
+        <em><li>Commit </li></em>
+        <em><li>Rollback </li></em>
+        <em><li>Savepoint </li></em>
+    </ul>
+    <h3>Commit Command</h3>
+    <ul>
+        <li><strong>Commit :-</strong> The COMMIT command is used to save and permanently apply all changes made during the current transaction to the database. It signifies the successful completion of a transaction.</li>
+            <div class="code-block">
+                <pre class="code-text"> COMMIT;</pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div> 
+            <p> Let's see an expamle how you can use it :-</p>
+            <div class="code-block">
+                <pre class="code-text"> <p>-- Start a transaction</p><p>START TRANSACTION;</p><p>-- Insert a new order into the 'orders' table</p><p>INSERT INTO orders (order_date, customer_id, product_id, quantity)</p><p>VALUES ('2023-08-22', 1, 101, 5);</p><p>-- Deduct the ordered quantity from the 'products' table</p><p>UPDATE products</p><p>SET quantity = quantity - 5</p><p>WHERE product_id = 101;</p><p>-- Check if everything is okay, and if it is, commit the transaction</p><p>COMMIT;</p></pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div>  
+            <br>
+            <p>Now let's analyze the above code :-</p>
+            <ol>
+                <li> We start a transaction with START TRANSACTION;.</li>
+                <li>We insert a new order into the "orders" table.</li>
+                <li>We update the "products" table to deduct the ordered quantity from the product's available quantity.</li>
+                <li>If everything goes well and there are no errors, we commit the transaction with COMMIT;.</li>
+            </ol>
+        </ul>
+    </ul>
+    <h3>Rollback Command</h3>
+    <ul>
+        <li><strong>Rollback :-</strong> The ROLLBACK command is used to undo all changes made during the current transaction, effectively canceling the transaction.</li>
+        <div class="code-block">
+            <pre class="code-text"> ROLLBACK;</pre>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </div>
+        <p> Let's see an expamle how you can use it :-</p>
+        <div class="code-block">
+            <pre class="code-text"> <p>-- Start a transaction</p><p>START TRANSACTION;</p><p>-- Insert a new order into the 'orders' table</p><p>INSERT INTO orders (order_date, customer_id, product_id, quantity)</p><p>VALUES ('2023-08-22', 1, 101, 5);</p><p>-- Deduct the ordered quantity from the 'products' table</p><p>UPDATE products</p><p>SET quantity = quantity - 5</p><p>WHERE product_id = 101;</p><p>-- Simulate an error or issue that requires a rollback</p><p>-- For example, a constraint violation or a check that fails</p><p>-- This line is for demonstration purposes only</p><p>-- In a real application, this might be replaced with actual error-handling logic</p><p>-- Roll back the transaction to cancel the changes due to the error</p><p>ROLLBACK;</p></pre>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </div>
+        <br>
+        <p>Now let's analyze the above code :-</p>
+        <ol>
+            <li>We start a transaction with START TRANSACTION;.</li>
+            <li>We insert a new order into the "orders" table.</li>
+            <li>We update the "products" table to deduct the ordered quantity from the product's available quantity.</li>
+            <li>We simulate an error or issue that requires a rollback. This line is for demonstration purposes and represents a point in your application logic where you might detect an error condition.</li>
+            <li>If an error occurs, we use ROLLBACK; to cancel all changes made within the transaction. This ensures that the order is not inserted, and the product quantity deduction is reverted.</li>
+        </ol>
+    </ul>
+    <h3>Savepoint Command</h3>
+    <ul>
+        <li><strong>Savepoint :-</strong>The SAVEPOINT command is used to create a named savepoint within a transaction. A savepoint allows you to roll back to a specific point in the transaction without undoing the entire transaction.</li>
+        <div class="code-block">
+            <pre class="code-text"> SAVEPOINT savepoint_name;</pre>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </div>
+        <p> Let's see an expamle how you can use it :-</p>
+        <div class="code-block">
+            <pre class="code-text"> <p>-- Start a transaction</p><p>START TRANSACTION;</p><p>-- Insert a new order into the 'orders' table</p><p>INSERT INTO orders (order_date, customer_id, product_id, quantity)</p><p>VALUES ('2023-08-22', 1, 101, 5);</p><p>-- Create a savepoint before deducting the ordered quantity from the 'products' table</p><p>SAVEPOINT before_deduction;</p><p>-- Deduct the ordered quantity from the 'products' table</p><p>UPDATE products</p><p>SET quantity = quantity - 5</p><p>WHERE product_id = 101;</p><p>-- Simulate an error or issue that requires a rollback to the savepoint</p><p>-- For example, a constraint violation or a check that fails</p><p>-- This line is for demonstration purposes only</p><p>-- In a real application, this might be replaced with actual error-handling logic</p><p>-- Roll back to the savepoint to cancel the changes due to the error</p><p>ROLLBACK TO before_deduction;</p><p>-- Continue with the rest of the transaction</p><p>-- You can make further updates or insertions as needed</p><p>-- Commit the transaction if everything is successfull</p><p>COMMIT;</p></pre>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </div>
+        <p>Now let's analyze the above code :-</p>
+        <ol>
+            <li>We start a transaction with START TRANSACTION;.</li>
+            <li>We insert a new order into the "orders" table.</li>
+            <li>We create a savepoint named "before_deduction" using SAVEPOINT before_deduction;. This savepoint marks a point in the transaction before we deduct the ordered quantity from the "products" table.</li>
+            <li>We deduct the ordered quantity from the "products" table.</li>
+            <li>We simulate an error or issue that requires a rollback to the savepoint. This line is for demonstration purposes and represents a point in your application logic where you might detect an error condition.</li>
+            <li>If an error occurs, we use ROLLBACK TO before_deduction; to roll back to the savepoint. This cancels all changes made after the savepoint, including the deduction from the "products" table.</li>
+            <li>You can then continue with the rest of the transaction, making further updates or insertions as needed.</li>
+            <li>Finally, if everything is successfull, you can commit the transaction with COMMIT;, making all changes permanent.</li>
+        </ol>
+    </ul>
+    <br>
+    <br>
+    <div class="button-container">
+        <button id="leftButton">&lt; Previous</button>
+        <button id="rightButton">Next &gt;</button>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("leftButton").addEventListener("click", function() {
+    window.location.href = "DCL Commands.html";
+  });
+
+  document.getElementById("rightButton").addEventListener("click", function() {
+    window.location.href = "DQL Commands.html";
+  });
+</script>
+</body>
+</html>

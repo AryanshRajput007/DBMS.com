@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: space-between; /* Align buttons with space between them */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+  <h1 class="hero-heading">Data Models</h1>
+  <!-- <p class="hero-description">Explore and learn about the fascinating world of DBMS.</p> -->
+</div>
+
+<ul class="horizontal-nav">
+  <li><a href="all.html" target="_blank">Home</a></li>
+  <li><a href="index.html">DBMS</a></li>
+  <li><a href="all.html" target="_blank">OOPS</a></li>
+  <li><a href="all.html" target="_blank">DSA</a></li>
+</ul>
+
+<ul class="vertical-nav">
+  <li style="font-size: 26px;"><i class="fas fa-book">Introduction</i></li>
+  <li><a href="Basics.html" >Basics of DBMS</a></li>
+  <li><a href="Application of DBMS.html">Application of DBMS</a></li>
+  <li><a href="FPS.html">File Processing System</a></li>
+  <li><a href="Definitions.html">DBMS Terminologies</a></li>
+  <li><a href="ANSI and SPARC model.html">ANSI and SPARC model</a></li>
+  <li><a href="Client-Server Architecture.html">Client-Server Architecture</a></li>
+  <li><a href="User and DBA.html">User and DBA</a></li>
+  <li><a href="Database System Architecture.html">Database System Architecture</a></li>
+  <li style="font-size: 26px;"><i class="fas fa-book">SQL Queries</i></li>
+  <li><a href="SQL basics.html">SQL Basics</a></li>
+  <li><a href="SQL Commands.html">SQL Commands</a></li>
+  <li><a href="DDL Commands.html">DDL Commands</a></li>
+  <li><a href="DML Commands.html">DML Commands</a></li>
+  <li><a href="DCL Commands.html">DCL Commands</a></li>
+  <li><a href="TCL Commands.html">TCL Commands</a></li>
+  <li><a href="DQL Commands.html">DQL Commands</a></li>
+  <li><a href="Operators.html">Operators</a></li>
+  <li><a class="active" href="Predicates.html">Predicates</a></li>
+  <li><a href="Functions.html">Functions</a></li>
+</ul>
+
+<div class="content">
+        <h3>What are Data Models ?</h3>
+        <i><p>Data models in MySQL, as in other database systems, are conceptual representations of how data is organized and structured within a database. They define the logical structure of data, the relationships between data elements, and the operations that can be performed on the data.</p></i>
+        <p>Here are the main Data Models listed below :-</p>
+        <ul>
+          <li><strong>Hierarchical Model</strong></li>
+          <li><strong>Network Model</strong></li>
+          <li><strong>Object-Oriented Model</strong></li>
+          <li><strong>Relational Model</strong></li>
+        </ul>
+        <ol>
+          <h3>What is Hierarchical Model ?</h3>
+          <i><p>The hierarchical data model is a database model that represents data in a tree-like or hierarchical structure. In this model, data is organized into a hierarchy of parent-child relationships, similar to the structure of a tree, where each data element (node) has a single parent node and zero or more child nodes. This model was widely used in the early days of database management systems and is still relevant for certain applications today.</p></i>
+          <img src="Hierarchical.jpg" class="imgmain" alt="Hierarchical Model">
+          <p>There are some <strong>extra</strong> terms related to the Hierarchical Model listed below :-</p>
+          <ol>
+            <li><strong>Nodes :- </strong>Nodes represent data elements in the hierarchy. Each node has a unique identifier within its parent's context and may have attributes that store data.</li>
+            <li><strong>Parent-Child Relationships :- </strong>The primary feature of the hierarchical model is the one-to-many relationship between nodes. Each node (child) is connected to a single parent node, and a parent node can have multiple child nodes.</li>
+            <li><strong>Root Node :- </strong>The top-level node in the hierarchy is called the root node. It has no parent and serves as the starting point for traversing the hierarchy.</li>
+            <li><strong>Leaf Nodes :- </strong>Nodes with no children are referred to as leaf nodes. They are the endpoints of the hierarchy and do not have child nodes.</li>
+            <li><strong>Paths :- </strong>A path in the hierarchical model represents the sequence of nodes from the root node to a specific node in the hierarchy. Paths are used to locate and navigate to nodes within the hierarchy.</li>
+            <li><strong>Hierarchical Queries :- </strong>Querying hierarchical data typically involves navigating the hierarchy using parent-child relationships. Common operations include retrieving all child nodes of a parent node, finding ancestors or descendants of a specific node, and locating nodes based on their attributes.</li>
+          </ol>
+          <p><strong>Advantages of Hierarchical Model :-</strong></p>
+          <ul>
+            <li><strong>Simplicity :- </strong>The hierarchical model is easy to understand and implement, making it suitable for certain types of data with clear parent-child relationships.</li>
+            <li><strong>Efficiency :- </strong>Retrieving data from hierarchical structures is efficient because it follows a well-defined path, similar to navigating a file system.</li>
+            <li><strong>Intuitive :- </strong>It mirrors real-world hierarchical relationships, making it intuitive for modeling certain types of data, such as organizational charts.</li>
+          </ul>
+          <p><strong>Disadvantages of Hierarchical Model :-</strong></p>
+          <ul>
+            <li><strong>Limited Flexibility :- </strong>It is not suitable for representing data with complex or many-to-many relationships. In hierarchical structures, data must fit neatly into a tree-like hierarchy.</li>
+            <li><strong>Data Redundancy :- </strong>Data redundancy can occur when multiple nodes need to store similar or duplicated information.</li>
+            <li><strong>Difficulty in Handling Changes :- </strong>Modifying the hierarchy structure or relationships can be challenging, especially when dealing with dynamic data.</li>
+            <li><strong>Lack of Standard :- </strong>Unlike the relational model, there is no standardized query language (like SQL) for hierarchical databases, which can lead to non-standardized access methods.</li>
+          </ul>
+          <p><strong>Application of Hierarchical Model are as follows :-</strong></p>
+          <ol>
+            <li><strong>Organizational Structure</strong><p><strong>Example :- </strong>An HR database can use the hierarchical model to store employee records, where each employee is associated with a department and manager.</p></li>
+            <li><strong>File Systems</strong><p><strong>Example :- </strong>In a file system, directories (folders) can contain files and subdirectories, forming a hierarchical structure.</p></li>
+            <li><strong>Product Categories</strong><p><strong>Example :- </strong>An online store can use the hierarchical model to categorize products into main categories (e.g., electronics, clothing) and subcategories (e.g., laptops, shirts).</p></li>
+            <li><strong>Bill of Materials</strong><p><strong>Example :- </strong>Manufacturers use the hierarchical model to represent the components needed to build a product. Each component can have subcomponents, forming a hierarchical BOM.</p></li>
+            <li><strong>Genealogy and Family Tree</strong><p><strong>Example :- </strong>Genealogy software and websites use the hierarchical model to represent family trees with individuals as nodes and parent-child relationships.</p></li>
+          </ol>
+          <h3>What is Network Model ?</h3>
+          <i><p>The network data model is a database model that extends the hierarchical data model by allowing nodes to have multiple parent nodes. In the network model, data is organized into a more flexible and complex structure compared to the strictly hierarchical model. It uses a set-based approach to represent data and relationships, using records and sets.</p></i>
+          <img src = "Network.jpg" class="imgmain" alt="Network Model">
+          <p>There are some <strong>extra</strong> terms related to the Network Model listed below :-</p>
+          <ol>
+            <li><strong>Nodes(Records) :- </strong>Nodes in the network model are similar to records in a database table. Each node can have multiple attributes to store data, similar to fields in a record. Nodes are used to represent entities in the database.</li>
+            <li><strong>Relationships(Edges) :- </strong>Relationships in the network model are represented as edges connecting nodes. Unlike the hierarchical model, where relationships are strictly parent-child, the network model allows for more complex relationships. A node can be related to multiple other nodes, both as a parent and as a child.</li>
+            <li><strong>Sets :- </strong>Sets are collections of nodes and represent a fundamental concept in the network model. Sets are used to define relationships between nodes. A set can contain one or more nodes, and a node can belong to multiple sets. Sets are used to navigate the network and access related nodes.</li>
+            <li><strong>Parents and Child Nodes :- </strong>While a node can have multiple parent nodes and child nodes, in practice, there is often a distinction between one primary parent (owner) and multiple secondary parents (members). This owner-member relationship allows for controlled access to related data.</li>
+            <li><strong>Records Types :- </strong>Similar to tables in the relational model, the network model uses record types to organize nodes with similar attributes and structures. Record types define the schema for nodes.</li>
+            <li><strong>Pointers :- </strong>To navigate the network, the model uses pointers or linkages. Pointers are used to specify relationships between nodes, indicating how nodes are connected in sets. Pointers are essential for traversing the network structure.</li>
+          </ol>
+          <p><strong>Advantages of Network Model :-</strong></p>
+          <ol>
+            <li><strong>Flexibility :- </strong>The network model provides greater flexibility than the hierarchical model for representing complex data relationships, including many-to-many relationships.</li>
+            <li><strong>Efficient Data Retrieval :- </strong>It is efficient for retrieving data that requires traversing complex relationships, as it allows access to data through multiple paths.</li>
+            <li><strong>Data Integrity :- </strong>The model supports data integrity through controlled access and relationships defined in sets.</li>
+          </ol>
+          <p>Disadvantages of Network Model :-</p>
+          <ol>
+            <li><strong>Complexity :- </strong>The model can be complex to design, implement, and maintain due to its support for complex relationships and pointers.</li>
+            <li><strong>Lack of Standardization :-</strong>Unlike the relational model with SQL as a standardized query language, the network model lacks a standardized query language, making it less consistent across database systems.</li>
+            <li><strong>Limited Adoption :- </strong>The network model has limited adoption compared to the relational model, which became the dominant database model in the industry.</li>
+          </ol>
+          <p>Application of Network Model are as follows :-</p>
+          <ol>
+            <li><strong>Organizational Structures</strong><p>Example :- An HR database can use the hierarchical model to store employee records, where each employee is associated with a department and manager.</p></li>
+            <li><strong>File Systems</strong><p>Example :- In a file system, directories (folders) can contain files and subdirectories, forming a hierarchical structure.</p></li>
+            <li><strong>Product Categories</strong><p></p>Example :- An online store can use the hierarchical model to categorize products into main categories (e.g., electronics, clothing) and subcategories (e.g., laptops, shirts).</li>
+            <li><strong>Bill of Materials (BOM)</strong><p></p>Example :- Manufacturers use the hierarchical model to represent the components needed to build a product. Each component can have subcomponents, forming a hierarchical BOM.</li>
+            <li><strong>Taxonomies and Hierarchical Data Taxonomies</strong><p></p>Example :- A knowledge base can use the hierarchical model to organize articles, with topics, subtopics, and articles forming a hierarchical structure.</li>
+          </ol>
+          <h3>What is Object-Oriented Model ?</h3>
+          <i><p>The object-oriented data model is a database model that represents data as objects, where each object combines data attributes (properties) and methods (functions or procedures) to operate on the data. This model extends the concepts of object-oriented programming (OOP) to database management, allowing data to be stored, organized, and queried in a manner that closely mirrors real-world objects and their behavior. The object-oriented model is particularly suited for applications where data exhibits complex relationships and behaviors. </p></i>
+          <img src="Object.jpg" class="imgmain" alt="Object-Oriented Model"> 
+          <p>Here are some <strong>extra </strong>concept related to Object-Oriented Model listed below :-</p>
+          <ol>
+            <li><strong>Objects :-</strong>Objects represent entities or concepts in the real world, such as a person, place, or thing. Each object has its own unique identity and encapsulates both data (attributes) and behavior (methods).</li>
+            <li><strong>Classes :- </strong>Classes are blueprint templates for creating objects. They define the structure, attributes, and methods that objects of that class will have. Classes are used to create instances (objects) of the class.</li>
+            <li><strong>Attributes :- </strong>Attributes, also known as properties or fields, represent the data associated with an object. They describe the characteristics or properties of the object.</li>
+            <li><strong>Methods :- </strong>Methods are functions or procedures associated with objects. They define the behavior or operations that can be performed on objects of a particular class.</li>
+            <li><strong>Inheritance</strong>Inheritance allows one class to inherit attributes and methods from another class. This promotes code reuse and hierarchy in class structures.</li>
+            <li><strong>Encapsulation :-</strong>Encapsulation refers to the bundling of data (attributes) and methods that operate on that data into a single unit (object). It enforces data access control and data integrity.</li>
+            <li><strong>Polymorphism :-</strong>Polymorphism allows objects of different classes to be treated as objects of a common superclass. It enables dynamic method invocation and flexibility in handling objects.</li>
+            <li><strong>Association :- </strong>Association represents relationships between objects. Objects can be associated in one-to-one, one-to-many, or many-to-many relationships, capturing real-world connections.</li>
+            <li><strong>Aggregation and Composition :- </strong>Aggregation and composition are forms of association that describe the relationships between whole objects and their parts. Composition implies a stronger relationship than aggregation.</li>
+          </ol>
+          <p>Advantages of Object-Oriented Model :-</p>
+          <ol>
+            <li><strong>Real-World Modelling :-</strong> It closely mirrors real-world entities, making it intuitive for modeling real-world scenarios.</li>
+            <li><strong>Code Reusability :-</strong> OOP principles encourage code reuse through inheritance and encapsulation.</li>
+            <li><strong>Complex Relationships :-</strong> It can represent complex relationships and behaviors effectively.</li>
+            <li><strong>Data Integrity :-</strong> Encapsulation allows for control over data access and ensures data integrity.</li>
+          </ol>
+          <p>Disadvantages of Object-Oriented Model :-</p>
+          <ol>
+            <li><strong>Complexity :-</strong> Designing object-oriented databases can be complex, especially for large and intricate systems.</li>
+            <li><strong>Lack of Standardization :-</strong> Unlike SQL for relational databases, there is no standardized query language for object-oriented databases.</li>
+            <li><strong>Performance :-</strong> Object-oriented databases may have performance issues when handling large amounts of data due to their complexity.</li>
+          </ol>
+          <p>Application of Object-Oriented Model are as follows :-</p>
+          <ol>
+            <li><strong>Enterprise Software</strong><p>Example :- An ERP system can use the object-oriented model to represent orders, inventory items, suppliers, and employees, with methods for processing orders and managing inventory.</p></li>
+            <li><strong>Geographic Information System</strong><p>Example :- A GIS application can model geographic objects like cities, roads, and landmarks as objects with properties such as coordinates, names, and populations.</p></li>
+            <li><strong>Simulation and Modeling</strong><p>Example :- In a flight simulator, aircraft and environmental conditions can be modeled as objects with properties (altitude, speed) and methods (flight control).</p></li>
+            <li><strong>Content Management Systems</strong><p>Example :- A CMS can treat content elements (articles, images) as objects with attributes (title, author) and methods (publish, archive).</p></li>
+            <li><strong>Game Development</strong><p>Example :- In a role-playing game (RPG), game objects such as characters, weapons, and quests can be represented as objects with attributes and behaviors.</p></li>
+          </ol>
+          <h3>What are Relational Models ?</h3>
+          <i><p>The relational model is a database model that represents data as a collection of tables, where each table consists of rows and columns. This model was introduced by Edgar F. Codd in the 1970s and has become the most widely used data model in modern database management systems (DBMS).</p></i>
+          <img src="Relation.jpg" class="imgmain" alt="Relational Model">
+          <p>Here are some <strong>important </strong>terms related to the Relational Model listed below :-</p>
+          <ol>
+            <li><strong>Tables(Relation) :- </strong>Tables, also known as relations, are the primary data structures in the relational model. Each table represents a specific entity or concept, such as "Customers," "Orders," or "Products."</li>
+            <li><strong>Rows(Tuples) :- </strong>Rows, also called tuples, represent individual records within a table. Each row contains a unique combination of data values that pertain to a single instance of the entity represented by the table.</li>
+            <li><strong>Columns(Attributes) :- </strong>Columns, also known as attributes, define the types of data that can be stored in a table. Each column has a name and a data type, such as text, number, date, or binary.</li>
+            <li><strong>Primary Key :- </strong>A primary key is a unique identifier for each row in a table. It ensures that each row has a distinct identity within the table.</li>
+            <li><strong>Foreign Keys :- </strong>A foreign key is a column in one table that establishes a link to the primary key of another table. It enforces referential integrity, ensuring that relationships between tables are maintained.</li>
+            <li><strong>Relationships :- </strong>Relationships between tables are defined by connecting tables through foreign keys. Common relationship types include one-to-one, one-to-many, and many-to-many.</li>
+            <li><strong>Normalization :- </strong>Normalization is a process used to eliminate data redundancy and improve data integrity by organizing data into separate tables based on their logical relationships.</li>
+            <li><strong>Structured Query Language :- </strong>SQL is the standardized query language used to interact with relational databases. It provides commands for querying, inserting, updating, and deleting data in tables.</li>
+            <li><strong>ACID Properties :- </strong>Relational databases adhere to the ACID properties (Atomicity, Consistency, Isolation, Durability), ensuring transactional consistency and data reliability.</li>
+          </ol>
+          <p>Advantages of Relational Model :-</p>
+          <ol>
+            <li><strong>Simplicity :- </strong>The tabular structure of tables, rows, and columns is easy to understand and use.</li>
+            <li><strong>Data Integrity :- </strong>Constraints, such as primary keys and foreign keys, help maintain data integrity.</li>
+            <li><strong>Standardized Query Language :- </strong>SQL provides a standardized and powerful way to interact with relational databases.</li>
+            <li><strong>Scalability :- </strong>Relational databases can handle a wide range of applications, from small-scale to enterprise-level systems.</li>
+            <li><strong>Maturity and Support :- </strong>Relational databases have a long history, extensive documentation, and strong support from database vendors.</li>
+          </ol>
+          <p>Disadvantages of Relational Model :-</p>
+          <ol>
+            <li><strong>Complex Queries :- </strong>Complex relationships or queries may require multiple joins across tables, leading to potentially complex SQL statements.</li>
+            <li><strong>Performance :- </strong>In certain situations, relational databases may experience performance bottlenecks, especially with very large datasets.</li>
+            <li><strong>Schema Changes :- </strong>Modifying the database schema (table structure) can be challenging and may require careful planning in production environments.</li>
+          </ol>
+          <p>Application of Relational Model are listed below :-</p>
+          <ol>
+            <li><strong>Business and Finance</strong><p>Example :- Banks use relational databases to store customer account details, transaction histories, and loan records.</p></li>
+            <li><strong>E-Commerce and Retail</strong><p>Example :- Online retailers use relational databases to manage product listings, track orders, and analyze sales trends.</p></li>
+            <li><strong>Healthcare</strong><p>Example :- Hospitals and healthcare providers use relational databases for electronic health records (EHRs) and medical billing.</p></li>
+            <li><strong>Content Management</strong><p>Example :- Content management systems (CMS) use relational databases to store and retrieve content for websites and digital platforms.</p></li>
+            <li><strong>Education</strong><p>Example :- Educational institutions use relational databases for student information systems and course management.</p></li>
+            <li><strong>Web Application</strong><p>Example :- Social media websites and web applications rely on relational databases to manage user-generated content and interactions.</p></li>
+            <li><strong>Airlines and Travel</strong><p>Example :- Airlines and travel agencies use relational databases for booking and managing travel services.</p></li>
+          </ol>
+        </ol>
+        <br>
+    <br>
+    <div class="button-container">
+        <button id="leftButton">&lt; Previous</button>
+        <button id="rightButton">Next &gt;</button>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("leftButton").addEventListener("click", function() {
+    window.location.href = "Functions.html";
+  });
+
+  document.getElementById("rightButton").addEventListener("click", function() {
+    window.location.href = "all.html";
+  });
+</script>
+</body>
+</html>

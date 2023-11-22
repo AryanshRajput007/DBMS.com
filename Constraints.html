@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: space-between; /* Align buttons with space between them */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+  <h1 class="hero-heading">Generalization and Specialization</h1>
+  <!-- <p class="hero-description">Explore and learn about the fascinating world of DBMS.</p> -->
+</div>
+
+<ul class="horizontal-nav">
+  <li><a href="all.html" target="_blank">Home</a></li>
+  <li><a href="index.html">DBMS</a></li>
+  <li><a href="all.html" target="_blank">OOPS</a></li>
+  <li><a href="all.html" target="_blank">DSA</a></li>
+</ul>
+
+<ul class="vertical-nav">
+  <li style="font-size: 26px;"><i class="fas fa-book">Introduction</i></li>
+  <li><a href="Basics.html" >Basics of DBMS</a></li>
+  <li><a href="Application of DBMS.html">Application of DBMS</a></li>
+  <li><a href="FPS.html">File Processing System</a></li>
+  <li><a href="Definitions.html">DBMS Terminologies</a></li>
+  <li><a href="ANSI and SPARC model.html">ANSI and SPARC model</a></li>
+  <li><a href="Client-Server Architecture.html">Client-Server Architecture</a></li>
+  <li><a href="User and DBA.html">User and DBA</a></li>
+  <li><a href="Database System Architecture.html">Database System Architecture</a></li>
+  <li style="font-size: 26px;"><i class="fas fa-book">SQL Queries</i></li>
+  <li><a href="SQL basics.html">SQL Basics</a></li>
+  <li><a href="SQL Commands.html">SQL Commands</a></li>
+  <li><a href="DDL Commands.html">DDL Commands</a></li>
+  <li><a href="DML Commands.html">DML Commands</a></li>
+  <li><a href="DCL Commands.html">DCL Commands</a></li>
+  <li><a href="TCL Commands.html">TCL Commands</a></li>
+  <li><a href="DQL Commands.html">DQL Commands</a></li>
+  <li><a href="Operators.html">Operators</a></li>
+  <li><a href="Predicates.html">Predicates</a></li>
+  <li><a href="Functions.html">Functions</a></li>
+  <li style="font-size: 26px;"><i class="fas fa-book">Data Models</i></li>
+  <li><a href="Model.html">Types of Models</a></li>
+  <li><a href="ER Model.html">ER Model</a></li>
+  <li><a href="Types Of Attributes.html">Types of Attributes</a></li>
+  <li><a href="Relationships.html">Types Of Relationship</a></li>
+  <li><a href="Mapping Cardinality.html">Mapping Cardinality</a></li>
+  <li><a href="Weak Entity Set.html">Weak Entity Set</a></li>
+  <li><a class="active" href="Generalization and Specialization.html">Generalization and Specialization</a></li>
+  <li><a href="Disjoint Contraints.html">Disjoint and Non-Disjoint Constraints</a></li>
+</ul>
+
+<div class="content">
+    <h3>What are Constraints ?</h3>
+    <i><p>In MySQL, constraints are rules and conditions that you can apply to database tables to ensure the data stored in the tables follows specific criteria and maintains data integrity. Constraints help enforce business rules, prevent invalid or inconsistent data, and ensure the accuracy and reliability of the database</p></i>
+    <p>Here are the main Constraints listed below :- </p>
+    <ul>
+        <li>Disjoint Constraints</li>
+        <li>Non-Disjoint Constraints</li>
+        <li>Participation Constraints</li>
+    </ul>
+    <br>
+    <br>
+    <div class="button-container">
+        <button id="leftButton">&lt; Previous</button>
+        <button id="rightButton">Next &gt;</button>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("leftButton").addEventListener("click", function() {
+    window.location.href = "Functions.html";
+    });
+
+    document.getElementById("rightButton").addEventListener("click", function() {
+    window.location.href = "all.html";
+    });
+</script>
+</body>
+</html>

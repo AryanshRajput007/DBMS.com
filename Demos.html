@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Code Block</title>
+    <style>
+        /* CSS for the code block */
+        .code-block {
+            position: relative;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+
+        /* CSS for the copy button container */
+        .copy-button-container {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: flex;
+            align-items: center; /* Center vertically */
+        }
+
+        /* CSS for the copy button */
+        .copy-button {
+            padding: 5px 10px;
+            background-color: #04AA6D; /* Initial background color is green */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center; /* Center icon and text vertically */
+        }
+
+        /* CSS for the "Code Copied" text */
+        .code-copied {
+            background-color: #7D7D7D; /* Change the background color to grey */
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* CSS for the "copied" class */
+        .copied .copy-button {
+            background-color: #7D7D7D; /* Change button background color to grey */
+        }
+    </style>
+</head>
+<body>
+    <div class="code-block">
+        <pre>
+            <code>
+                <!-- Your code goes here -->
+                function copyCode(element) {
+                    var codeBlock = element.querySelector('code');
+                    var textArea = document.createElement('textarea');
+                    textArea.value = codeBlock.textContent;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    
+                    // Toggle the "copied" class to change button appearance
+                    var copyButton = element.querySelector('.copy-button');
+                    var copiedText = element.querySelector('.code-copied');
+                    copyButton.classList.add('copied'); // Add "copied" class
+                    copyButton.innerHTML = '&#10004; Code Copied'; // Display a tick mark icon
+                    copiedText.textContent = 'Code Copied'; // Display "Code Copied" text
+                    
+                    // Reset the button appearance after a few seconds
+                    setTimeout(function() {
+                        copyButton.classList.remove('copied'); // Remove "copied" class
+                        copyButton.innerHTML = '<span class="copy-icon">📋</span> Copy'; // Reset button content
+                        copiedText.textContent = ''; // Clear the "Code Copied" text
+                    }, 2000); // Change back after 2 seconds (2000 milliseconds)
+                }
+            </code>
+        </pre>
+        <div class="copy-button-container">
+            <button class="copy-button" onclick="copyCode(this.parentNode.parentNode)">
+                <span class="copy-icon">📋</span> Copy
+            </button>
+        </div>
+    </div>
+
+    <div class="code-block">
+        <pre>
+            <code>
+                <!-- Your code goes here (second code block) -->
+                function anotherFunction() {
+                    console.log("This is another code block.");
+                }
+            </code>
+        </pre>
+        <div class="copy-button-container">
+            <button class="copy-button" onclick="copyCode(this.parentNode.parentNode)">
+                <span class="copy-icon">📋</span> Copy
+            </button>
+        </div>
+    </div>
+    <script>
+      function copyCode(element) {
+                    var codeBlock = element.querySelector('code');
+                    var textArea = document.createElement('textarea');
+                    textArea.value = codeBlock.textContent;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    
+                    // Toggle the "copied" class to change button appearance
+                    var copyButton = element.querySelector('.copy-button');
+                    var copiedText = element.querySelector('.code-copied');
+                    copyButton.classList.add('copied'); // Add "copied" class
+                    copyButton.innerHTML = '&#10004; Code Copied'; // Display a tick mark icon
+                    copiedText.textContent = 'Code Copied'; // Display "Code Copied" text
+                    
+                    // Reset the button appearance after a few seconds
+                    setTimeout(function() {
+                        copyButton.classList.remove('copied'); // Remove "copied" class
+                        copyButton.innerHTML = '<span class="copy-icon">📋</span> Copy'; // Reset button content
+                        copiedText.textContent = ''; // Clear the "Code Copied" text
+                    }, 2000); // Change back after 2 seconds (2000 milliseconds)
+                }
+    </script>
+</body>
+</html>

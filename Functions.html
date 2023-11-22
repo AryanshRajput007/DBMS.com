@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: space-between; /* Align buttons with space between them */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+  <h1 class="hero-heading">SQL Basics</h1>
+  <!-- <p class="hero-description">Explore and learn about the fascinating world of DBMS.</p> -->
+</div>
+
+<ul class="horizontal-nav">
+  <li><a href="all.html" target="_blank">Home</a></li>
+  <li><a href="index.html">DBMS</a></li>
+  <li><a href="all.html" target="_blank">OOPS</a></li>
+  <li><a href="all.html" target="_blank">DSA</a></li>
+</ul>
+
+<ul class="vertical-nav">
+  <li style="font-size: 26px;"><i class="fas fa-book">Introduction</i></li>
+  <li><a href="Basics.html" >Basics of DBMS</a></li>
+  <li><a href="Application of DBMS.html">Application of DBMS</a></li>
+  <li><a href="FPS.html">File Processing System</a></li>
+  <li><a href="Definitions.html">DBMS Terminologies</a></li>
+  <li><a href="ANSI and SPARC model.html">ANSI and SPARC model</a></li>
+  <li><a href="Client-Server Architecture.html">Client-Server Architecture</a></li>
+  <li><a href="User and DBA.html">User and DBA</a></li>
+  <li><a href="Database System Architecture.html">Database System Architecture</a></li>
+  <li style="font-size: 26px;"><i class="fas fa-book">SQL Queries</i></li>
+  <li><a href="SQL basics.html">SQL Basics</a></li>
+  <li><a href="SQL Commands.html">SQL Commands</a></li>
+  <li><a href="DDL Commands.html">DDL Commands</a></li>
+  <li><a href="DML Commands.html">DML Commands</a></li>
+  <li><a href="DCL Commands.html">DCL Commands</a></li>
+  <li><a href="TCL Commands.html">TCL Commands</a></li>
+  <li><a href="DQL Commands.html">DQL Commands</a></li>
+  <li><a href="Operators.html">Operators</a></li>
+  <li><a href="Predicates.html">Predicates</a></li>
+  <li><a class="active" href="Functions.html">Functions</a></li>
+</ul>
+
+<div class="content">
+        <h3>What are Functions ?</h3>
+        <i><p>In MySQL, functions are predefined routines or procedures that perform specific tasks or calculations on data. Functions take one or more input values (arguments), process them, and return a result. Functions are an integral part of SQL and are used to perform various operations on data within SQL queries.</p></i>
+        <p>In this page we will be studying the following Functions :-</p>
+        <ul>
+          <li>Aggregate Functions</li>
+          <li>Character Functions</li>
+          <li>Arithmetic Functions</li>
+          <li>Date Functions</li>
+          <li>Conversion Functions</li>
+        </ul>
+        <h3>What are Aggregate Functions ?</h3>
+        <i><p>Aggregate functions in MySQL are a category of functions that operate on sets of values and return a single value as a summary or result. These functions perform calculations on multiple rows or records, typically within a specified group, and return a single value that summarizes the data in some way.</p></i>
+        <p>Here are the main Aggregate Functions :-</p>
+        <ul> 
+          <li>SUM</li>
+          <li>AVG</li>
+          <li>COUNT</li>
+          <li>MAX</li>
+          <li>MIN</li>
+          <br> 
+          </ul>
+          <ol>
+          <p>So let's take an reference table named "Employees" to understand all the above Function :-</p>
+          <table border = "2">
+            <tr>
+              <td>Emp_Id</td>
+              <td>Emp_First_Name</td>
+              <td>Emp_Last_Name</td>
+              <td>Department</td>
+              <td>Salary</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Aryansh</td>
+              <td>Rajput</td>
+              <td>Manager</td>
+              <td>80000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Kush</td>
+              <td>Patel</td>
+              <td>HR</td>
+              <td>78000</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Shivanand</td>
+              <td>Singh</td>
+              <td>Finance</td>
+              <td>75000</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Ishant</td>
+              <td>Rathi</td>
+              <td>Developer</td>
+              <td>70000</td>
+            </tr>
+        </table>
+        <br>
+        </ol>
+        <ol>
+        <h3>SUM Function</h3>
+        <p><strong> SUM :-</strong> Calculates the sum of a numeric column's values.</p>
+        <div class="code-block">
+          <pre class="code-text"><p>SUM(column_name)</p></pre>
+          <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </div>
+      <p>Now let's see how a query is written using SUM function :-</p>
+      <div class="code-block">
+        <pre class="code-text"><p>SELECT SUM(Salary) AS Total_Salary FROM Employees;</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+        <p> So the output of the above code will be :-</p>
+        <table border = "2">
+          <tr>
+            <td>Total_Salary</td>
+          </tr>
+          <tr>
+            <td>303000</td>
+          </tr>
+      </table>
+      <br>
+      <h3>AVG Function</h3>
+      <p><strong> AVG :-</strong> Calculates the average (mean) of a numeric column's values.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>AVG(column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+    <p>Now let's see how a query is written using AVG function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT AVG(salary) AS Average_salary FROM Employees;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Average_Salary</td>
+        </tr>
+        <tr>
+          <td>75750</td>
+        </tr>
+    </table>
+    <br>
+    <h3>COUNT Function</h3>
+      <p><strong> COUNT :-</strong> Counts the number of rows that match a condition or the number of non-null values in a column.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>COUNT(*)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+    <p>Now let's see how a query is written using COUNT function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT COUNT(*) AS Total_Employees FROM Employees;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Total_Employees</td>
+        </tr>
+        <tr>
+          <td>4</td>
+        </tr>
+    </table>
+    <br>
+    <h3>MAX Function</h3>
+      <p><strong> MAX :-</strong> Returns the maximum value from a numeric or date column.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>MAX(column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+    <p>Now let's see how a query is written using MAX function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT MAX(Salary) AS Highest_Salary FROM Employees;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Highest_Salary</td>
+        </tr>
+        <tr>
+          <td>80000</td>
+        </tr>
+    </table>
+    <br>
+    <h3>MIN Function</h3>
+      <p><strong> MIN :-</strong> Returns the minimum value from a numeric or date column.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>MIN(column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+    <p>Now let's see how a query is written using MIN function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT MIN(Salary) AS Lowest_Salary FROM Employees;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Lowest_Salary</td>
+        </tr>
+        <tr>
+          <td>70000</td>
+        </tr>
+    </table>
+    <br>
+  </ol>
+    <h3>What are Character Function?</h3>
+    <i><p>Character functions in MySQL are a category of functions that are used to manipulate and modify text or character data within SQL queries. These functions allow you to perform various operations on character strings, such as concatenation, conversion, case conversion (uppercase and lowercase), and substring extraction.</p></i>
+      <p>Here are the main Character Functions :-</p>
+      <ul>
+        <li>CONCAT</li>
+        <li>UPPER</li>
+        <li>LOWER</li>
+        <li>LENGTH</li>
+        <li>SUBSTRING</li>
+        <li>CONVERT</li>
+        <li>TRIM</li>
+        <li>LEFT AND RIGHT</li>
+      </ul>
+        <ol>
+          <h3>CONCAT Function</h3>
+        <p><strong> CONCAT :-</strong> Concatenates two or more strings together.</p>
+        <div class="code-block">
+          <pre class="code-text"><p>CONCAT(column1,' ',column2)</p></pre>
+          <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </div>
+        <p>So let's take a reference table to understand the following CONCAT function :-</p>
+        <table border = "2">
+          <tr>
+            <td>Emp_Id</td>
+            <td>Emp_First_Name</td>
+            <td>Emp_Last_Name</td>
+            <td>Department</td>
+            <td>Salary</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Aryansh</td>
+            <td>Rajput</td>
+            <td>Manager</td>
+            <td>80000</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Kush</td>
+            <td>Patel</td>
+            <td>HR</td>
+            <td>78000</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Shivanand</td>
+            <td>Singh</td>
+            <td>Finance</td>
+            <td>75000</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Ishant</td>
+            <td>Rathi</td>
+            <td>Developer</td>
+            <td>70000</td>
+          </tr>
+      </table>
+      <br>
+      <p>Now let's see how a query is written using CONCAT function :-</p>
+      <div class="code-block">
+        <pre class="code-text"><p>SELECT CONCAT(emp_first_name,' ', emp_last_name) AS Full_Name FROM Employees;</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+        <p> So the output of the above code will be :-</p>
+        <table border = "2">
+          <tr>
+            <td>Full_Name</td>
+          </tr>
+          <tr>
+            <td>Aryansh Rajput</td>
+          </tr>
+          <tr>
+            <td>Kush Patel</td>
+          </tr>
+          <tr>
+            <td>Shivanand Singh</td>
+          </tr>
+          <tr>
+            <td>Ishant Rathi</td>
+          </tr>
+      </table>
+      <br>
+      <h3>UPPER Function</h3>
+      <p><strong> UPPER :-</strong> Converts a string to uppercase.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>UPPER(column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take an reference table named "Employees" to understand the CONCAT Function :-</p>
+          <table border = "2">
+            <tr>
+              <td>Emp_Id</td>
+              <td>Emp_Name</td>
+              <td>Department</td>
+              <td>Salary</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Aryansh Rajput</td>
+              <td>Manager</td>
+              <td>80000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Kush Patel</td>
+              <td>HR</td>
+              <td>78000</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Shivanand Singh</td>
+              <td>Finance</td>
+              <td>75000</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Ishant Rathi</td>
+              <td>Developer</td>
+              <td>70000</td>
+            </tr>
+        </table>
+        <br>
+    <p>Now let's see how a query is written using UPPER function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT UPPER(Emp_Name) AS uppercase_name FROM Employees;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Uppercase_Name</td>
+        </tr>
+        <tr>
+          <td>ARYANSH RAJPUT</td>
+        </tr>
+        <tr>
+          <td>KUSH PATEL</td>
+        </tr>
+        <tr>
+          <td>SHIVANAND SINGH</td>
+        </tr>
+        <tr>
+          <td>ISHANT RATHI</td>
+        </tr>
+    </table>
+    <br>
+    <h3>LOWER Function</h3>
+      <p><strong> LOWER :-</strong> Converts a string to lowercase.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>LOWER(column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take an reference table named "Employees" to understand the LOWER Function :-</p>
+          <table border = "2">
+            <tr>
+              <td>Emp_Id</td>
+              <td>Emp_Name</td>
+              <td>Department</td>
+              <td>Salary</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Aryansh Rajput</td>
+              <td>Manager</td>
+              <td>80000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Kush Patel</td>
+              <td>HR</td>
+              <td>78000</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Shivanand Singh</td>
+              <td>Finance</td>
+              <td>75000</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Ishant Rathi</td>
+              <td>Developer</td>
+              <td>70000</td>
+            </tr>
+        </table>
+        <br>
+    <p>Now let's see how a query is written using LOWER function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT LOWER(Emp_Name) AS uppercase_name FROM Employees;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Lowercase_Name</td>
+        </tr>
+        <tr>
+          <td>aryansh rajput</td>
+        </tr>
+        <tr>
+          <td>kush patel</td>
+        </tr>
+        <tr>
+          <td>shivanand singh</td>
+        </tr>        
+        <tr>
+          <td>ishant rathi</td>
+        </tr>
+    </table>
+    <br>
+    <h3>LENGTH Function</h3>
+      <p><strong> LENGTH :-</strong> Returns the length (number of characters) of a string.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>LENGTH(column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take an reference table named "Employees" to understand LENGTH Function :-</p>
+      <table border = "2">
+        <tr>
+          <td>Emp_Id</td>
+          <td>Emp_First_Name</td>
+          <td>Emp_Last_Name</td>
+          <td>Department</td>
+          <td>Salary</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Aryansh</td>
+          <td>Rajput</td>
+          <td>Manager</td>
+          <td>80000</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Kush</td>
+          <td>Patel</td>
+          <td>HR</td>
+          <td>78000</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Shivanand</td>
+          <td>Singh</td>
+          <td>Finance</td>
+          <td>75000</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Ishant</td>
+          <td>Rathi</td>
+          <td>Developer</td>
+          <td>70000</td>
+        </tr>
+    </table>
+        <br>
+    <p>Now let's see how a query is written using LENGTH function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Emp_First_Name, LENGTH(Emp_First_Name) AS First_Name_Length FROM Employees;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Emp_First_Name</td>
+          <td>First_Name_Length</td>
+        </tr>
+        <tr>
+          <td>Aryansh</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>Kush</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Shivanand</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>Ishant</td>
+          <td>6</td>
+        </tr>
+    </table>
+    <br>
+    <h3>SUBSTRING Function</h3>
+      <p><strong> SUBSTRING :-</strong> Extracts a portion of a string based on a starting position and length.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>SUBSTRING(column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take an reference table named "Products" to understand the SUBSTRING Function :-</p>
+      <table border = "2">
+        <tr>
+          <td>Product_Id</td>
+          <td>Product_Name</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Smartphone: iPhone 13 Pro Max</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Laptop: Dell XPS 15</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Tablet: Samsung Galaxy Tab S7</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Headphones: Sony WH-1000XM4</td>
+        </tr>
+    </table>
+        <br>
+    <p>Now let's see how a query is written using SUBSTRING function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT product_name, SUBSTRING(product_name, 1, 10) AS Short_Name FROM Products;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Product _Name</td>
+          <td>Short_Name</td>
+        </tr>
+        <tr>
+          <td>Smartphone: iPhone 13 Pro Max</td>
+          <td>Smartphone</td>
+        </tr>
+        <tr>
+          <td>Laptop: Dell XPS 15 </td>
+          <td>Laptop: De</td>
+        </tr>
+        <tr>
+          <td>Tablet: Samsung Galaxy Tab S7</td>
+          <td>Tablet: Sa</td>
+        </tr>
+        <tr>
+          <td>Headphones: Sony WH-1000XM4</td>
+          <td>Headphones</td>
+        </tr>
+    </table>
+    <br>
+    <h3>CONVERT Function</h3>
+      <p><strong> CONVERT :-</strong> Converts a string from one character set to another.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>CONVERT(column_name, Data_Type)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So to understand the CONVERT function we are going to take a reference table named Employees :-</p>
+      <table border = "2">
+        <tr>
+          <td>Emp_Id</td>
+          <td>Emp_Name</td>
+          <td>Salary</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Aryansh Rajput</td>
+          <td>62000.25</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Kush Patel</td>
+          <td>60000.75</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Shivanand Singh</td>
+          <td>58000.00</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Ishant Rathi</td>
+          <td>55000.50</td>
+        </tr>
+    </table>
+    <br>
+    <p><strong>Note :- </strong>So in the above code the Salary column is having <strong>VARCHAR</strong> data type and now using CONVERT function we are going to change it's data type from "<strong>VARCHAR</strong>" to "<strong>DECIMAL</strong>". And if you want to check the datatype of a specific column the Query is as follows :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>desc Employees;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So the output of the above code will be :-</p>
+    <table border = "2">
+      <tr>
+        <td>Field</td>
+        <td>Type</td>
+        <td>NULL</td>
+        <td>Key</td>
+        <td>Default</td>
+        <td>Extra</td>
+      </tr>
+      <tr>
+        <td>Emp_Id</td>
+        <td>varchar(20)</td>
+        <td>YES</td>
+        <td>--</td>
+        <td>NULL</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>Emp_Name</td>
+        <td>varchar(30)</td>
+        <td>YES</td>
+        <td>--</td>
+        <td>NULL</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>Salary</td>
+        <td>varchar(15)</td>
+        <td>YES</td>
+        <td>--</td>
+        <td>NULL</td>
+        <td>--</td>
+      </tr>
+  </table>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Emp_Name, CONVERT(Salary, DECIMAL(10, 2)) AS Converted_Salary FROM Employees;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Emp_Name</td>
+        <td>Salary</td>
+      </tr>
+      <tr>
+        <td>Aryansh Rajput</td>
+        <td>62000.25</td>
+      </tr>
+      <tr>
+        <td>Kush Patel</td>
+        <td>60000.75</td>
+      </tr>
+      <tr>
+        <td>Shivanand Singh</td>
+        <td>58000.00</td>
+      </tr>
+      <tr>
+        <td>Ishant Rathi</td>
+        <td>55000.50</td>
+      </tr>
+  </table>
+  <br>
+  <h3>TRIM Function</h3>
+      <p><strong> TRIM :-</strong>  Removes leading and trailing spaces (or specified characters) from a string.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>TRIM(' ' FROM column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take an reference table named "Employees" to understand the TRIM Function :-</p>
+          <table border = "2">
+            <tr>
+              <td>Emp_Id</td>
+              <td>Emp_Name</td>
+              <td>Department</td>
+              <td>Salary</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Aryansh Rajput</td>
+              <td>Manager</td>
+              <td>80000</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Kush Patel</td>
+              <td>HR</td>
+              <td>78000</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Shivanand Singh</td>
+              <td>Finance</td>
+              <td>75000</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Ishant Rathi</td>
+              <td>Developer</td>
+              <td>70000</td>
+            </tr>
+        </table>
+        <br>
+    <p>Now let's see how a query is written using TRIM function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT TRIM(' ' FROM Emp_Name) AS Trimmed_Name FROM Employees;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Trimmed_Name</td>
+        </tr>
+        <tr>
+          <td>AryanshRajput</td>
+        </tr>
+        <tr>
+          <td>KushPatel</td>
+        </tr>
+        <tr>
+          <td>ShivanandSingh</td>
+        </tr>
+        <tr>
+          <td>IshantRathi</td>
+        </tr>
+    </table>
+    <br>
+    <p>We can also use TRIM function to delete specific character from a specific column and the Query for that is as follows :-</p>
+    <ul>
+    <li><strong>To Delete The Leading Element :-</strong></li>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT TRIM(LEADING 'X' FROM 'XXDataXX') AS Trimmed_String;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>The output of the above code is as follows :-</p>
+    <table border = "2">
+      <tr>
+        <td>Trimmed_String</td>
+      </tr>
+      <tr>
+        <td>DataXX</td>
+      </tr>
+  </table>
+  <br>
+  <li><strong>To Delete The Trailing Element :-</strong></li>
+  <div class="code-block">
+    <pre class="code-text"><p>SELECT TRIM(TRAILING 'X' FROM 'XXDataXX') AS trimmed_string;</p></pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+  <p>The output of the above code is as follows :-</p>
+  <table border = "2">
+    <tr>
+      <td>Trimmed_String</td>
+    </tr>
+    <tr>
+      <td>XXData</td>
+    </tr>
+  </table>
+    <br>
+    </ul>
+    <h3>LEFT and RIGHT</h3>
+    <p><strong> LEFT and RIGHT :-</strong> Extracts a specified number of characters from the left or right side of a string.</p>
+    <ul>
+      <li>LEFT :-</li>
+      <div class="code-block">
+        <pre class="code-text"><p>LEFT(column_name, range)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take a reference table to understand the following LEFT function :-</p>
+        <table border = "2">
+          <tr>
+            <td>Emp_Id</td>
+            <td>Emp_First_Name</td>
+            <td>Emp_Last_Name</td>
+            <td>Department</td>
+            <td>Salary</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Aryansh</td>
+            <td>Rajput</td>
+            <td>Manager</td>
+            <td>80000</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Kush</td>
+            <td>Patel</td>
+            <td>HR</td>
+            <td>78000</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Shivanand</td>
+            <td>Singh</td>
+            <td>Finance</td>
+            <td>75000</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Ishant</td>
+            <td>Rathi</td>
+            <td>Developer</td>
+            <td>70000</td>
+          </tr>
+      </table>
+      <br>
+      <p>Now let's see how a query is written using LEFT function :-</p>
+      <div class="code-block">
+        <pre class="code-text"><p>SELECT LEFT(Emp_First_Name, 4) AS First_Four_Letters FROM Employees;</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+        <p> So the output of the above code will be :-</p>
+        <table border = "2">
+          <tr>
+            <td>First_Four_Letters</td>
+          </tr>
+          <tr>
+            <td>Arya</td>
+          </tr>
+          <tr>
+            <td>Kush</td>
+          </tr>
+          <tr>
+            <td>Shiv</td>
+          </tr>
+          <tr>
+            <td>Isha</td>
+          </tr>
+      </table>
+      <br>
+      <li>RIGHT :-</li>
+      <div class="code-block">
+        <pre class="code-text"><p>RIGHT(column_name, range)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take a reference table to understand the following RIGHT function :-</p>
+        <table border = "2">
+          <tr>
+            <td>Emp_Id</td>
+            <td>Emp_First_Name</td>
+            <td>Emp_Last_Name</td>
+            <td>Department</td>
+            <td>Salary</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Aryansh</td>
+            <td>Rajput</td>
+            <td>Manager</td>
+            <td>80000</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Kush</td>
+            <td>Patel</td>
+            <td>HR</td>
+            <td>78000</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Shivanand</td>
+            <td>Singh</td>
+            <td>Finance</td>
+            <td>75000</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Ishant</td>
+            <td>Rathi</td>
+            <td>Developer</td>
+            <td>70000</td>
+          </tr>
+      </table>
+      <br>
+      <p>Now let's see how a query is written using RIGHT function :-</p>
+      <div class="code-block">
+        <pre class="code-text"><p>SELECT RIGHT(Emp_First_Name, 4) AS Last_Four_Letters FROM Employees;</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+        <p> So the output of the above code will be :-</p>
+        <table border = "2">
+          <tr>
+            <td>Last_Four_Letters</td>
+          </tr>
+          <tr>
+            <td>ansh</td>
+          </tr>
+          <tr>
+            <td>Kush</td>
+          </tr>
+          <tr>
+            <td>nand</td>
+          </tr>
+          <tr>
+            <td>hant</td>
+          </tr>
+      </table>
+      <br>
+    </ul>
+    </ol>
+    <h3>What are Arithmetic Functions ?</h3>
+    <i><p>Arithmetic functions in MySQL are a category of functions used to perform mathematical operations on numeric data. These functions enable you to conduct calculations on numeric values within your SQL queries.</p></i>
+    <p>Here are the main Arithmetic Functions :- </p>
+    <ul>
+      <li>ABS</li>
+      <li>ROUND</li>
+      <li>CEIL</li>
+      <li>FLOOR</li>
+      <li>MOD</li>
+      <li>POWER</li>
+      <li>SQRT</li>
+      <li>SIGN</li>
+    </ul>
+    <ol>
+    <h3>ABS Function</h3>
+      <p><strong> ABS :-</strong> Returns the absolute value of a number. It removes the negative sign if present.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>ABS(column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take an reference table named "numbers" to understand the ABS Function :-</p>
+      <table border = "2">
+        <tr>
+          <td>Value</td>
+        </tr>
+        <tr>
+          <td>-10</td>
+        </tr>
+        <tr>
+          <td>7.5</td>
+        </tr>
+        <tr>
+          <td>-5.5</td>
+        </tr>
+    </table>
+        <br>
+    <p>Now let's see how a query is written using ABS function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Value, ABS(Value) AS Absolute_Value FROM numbers;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Value</td>
+          <td>Absolute_Value</td>
+        </tr>
+        <tr>
+          <td>-10</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>7.5</td>
+          <td>7.5</td>
+        </tr>
+        <tr>
+          <td>-5.5</td>
+          <td>5.5</td>
+        </tr>
+    </table>
+    <br>
+    <h3>ROUND Function</h3>
+      <p><strong> ROUND :-</strong> Rounds a number to a specified number of decimal places.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>ROUND(column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take an reference table named "numbers" to understand the ROUND Function :-</p>
+      <table border = "2">
+        <tr>
+          <td>Value</td>
+        </tr>
+        <tr>
+          <td>-7.4867</td>
+        </tr>
+        <tr>
+          <td>8.6814</td>
+        </tr>
+        <tr>
+          <td>9.8743</td>
+        </tr>
+    </table>
+        <br>
+    <p>Now let's see how a query is written using ROUND function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Value, ROUND(Value, 3) AS Rounded_Value FROM numbers;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Value</td>
+          <td>Rounded_Value</td>
+        </tr>
+        <tr>
+          <td>-7.4867</td>
+          <td>-7.487</td>
+        </tr>
+        <tr>
+          <td>8.6814</td>
+          <td>8.681</td>
+        </tr>
+        <tr>
+          <td>9.8743</td>
+          <td>9.874</td>
+        </tr>
+    </table>
+    <br>
+    <h3>CEIL Function</h3>
+      <p><strong> CEIL :-</strong> Rounds a number up to the nearest integer that is greater than or equal to the original number.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>CEIL(column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take an reference table named "numbers" to understand the CEIL Function :-</p>
+      <table border = "2">
+        <tr>
+          <td>Value</td>
+        </tr>
+        <tr>
+          <td>-7.4867</td>
+        </tr>
+        <tr>
+          <td>8.6814</td>
+        </tr>
+        <tr>
+          <td>9.8743</td>
+        </tr>
+    </table>
+        <br>
+    <p>Now let's see how a query is written using CEIL function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Value, CEIL(Value) AS Ceiling_Value FROM numbers;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Value</td>
+          <td>Ceiling_Value</td>
+        </tr>
+        <tr>
+          <td>-7.4867</td>
+          <td>-7</td>
+        </tr>
+        <tr>
+          <td>8.6814</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>9.8743</td>
+          <td>10</td>
+        </tr>
+    </table>
+    <br>
+    <h3>FLOOR Function</h3>
+      <p><strong> FLOOR :-</strong>  Rounds a number down to the nearest integer that is less than or equal to the original number.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>FLOOR(column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take an reference table named "numbers" to understand the FLOOR Function :-</p>
+      <table border = "2">
+        <tr>
+          <td>Value</td>
+        </tr>
+        <tr>
+          <td>-7.4867</td>
+        </tr>
+        <tr>
+          <td>8.6814</td>
+        </tr>
+        <tr>
+          <td>9.8743</td>
+        </tr>
+    </table>
+        <br>
+    <p>Now let's see how a query is written using FLOOR function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Value, FLOOR(Value) AS Floor_Value FROM numbers;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Value</td>
+          <td>Floor_Value</td>
+        </tr>
+        <tr>
+          <td>-7.4867</td>
+          <td>-8</td>
+        </tr>
+        <tr>
+          <td>8.6814</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>9.8743</td>
+          <td>9</td>
+        </tr>
+    </table>
+    <br>
+    <h3>MOD Function</h3>
+      <p><strong> MOD :-</strong> Returns the remainder of the division of one number by another.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>MOD(column_name, divisor)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take two reference table named "numbers" and "divisors" to understand the MOD Function :-</p>
+      <ul>
+        <li>Number table :-</li>
+        <table border = "2">
+          <tr>
+            <td>Value</td>
+          </tr>
+          <tr>
+            <td>-10</td>
+          </tr>
+          <tr>
+            <td>7.5</td>
+          </tr>
+          <tr>
+            <td>-5.5</td>
+          </tr>
+      </table>
+      <br>
+      <li>Divisors table :-</li>
+      <table border = "2">
+        <tr>
+          <td>Divisor</td>
+        </tr>
+        <tr>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>3</td>
+        </tr>
+    </table>
+    <br>
+      </ul>
+      <br>
+    <p>Now let's see how a query is written using MOD function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT n.Value, d.Divisor, MOD(n.Value, d.Divisor) AS Remainder</p><p>FROM numbers n</p><p>CROSS JOIN divisors d;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Value</td>
+          <td>Divisor</td>
+          <td>Remainder</td>
+        </tr>
+        <tr>
+          <td>-10</td>
+          <td>3</td>
+          <td>-1</td>
+        </tr>
+        <tr>
+          <td>-10</td>
+          <td>4</td>
+          <td>-2</td>
+        </tr>
+        <tr>
+          <td>7.25</td>
+          <td>3</td>
+          <td>1.25</td>
+        </tr>
+        <tr>
+          <td>7.25</td>
+          <td>4</td>
+          <td>3.25</td>
+        </tr>
+        <tr>
+          <td>-5.5</td>
+          <td>3</td>
+          <td>-2.5</td>
+        </tr>
+        <tr>
+          <td>-5.5</td>
+          <td>4</td>
+          <td>-1.5</td>
+        </tr>
+    </table>
+    <br>
+    <h3>POWER Function</h3>
+      <p><strong> POWER :-</strong> Raises a number to a specified power.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>POWER(column_name, exponent)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take two reference table named "numbers" and "Exponents" to understand the MOD Function :-</p>
+      <li>Number table :-</li>
+        <table border = "2">
+          <tr>
+            <td>Value</td>
+          </tr>
+          <tr>
+            <td>-10</td>
+          </tr>
+          <tr>
+            <td>7.5</td>
+          </tr>
+          <tr>
+            <td>-5.5</td>
+          </tr>
+      </table>
+      <br>
+      <li>Exponents table :-</li>
+      <table border = "2">
+        <tr>
+          <td>Exponent</td>
+        </tr>
+        <tr>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>3</td>
+        </tr>
+    </table>
+    <br>
+      </ul>
+        <br>
+    <p>Now let's see how a query is written using POWER function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Value, e.Exponent, POWER(Value, e.Exponent) AS Result</p><p>FROM numbers</p><p>CROSS JOIN exponents e;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Value</td>
+        <td>Exponent</td>
+        <td>Result</td>
+      </tr>
+      <tr>
+        <td>-10</td>
+        <td>3</td>
+        <td>-1000</td>
+      </tr>
+      <tr>
+        <td>-10</td>
+        <td>2</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>7.25</td>
+        <td>3</td>
+        <td>381.078125</td>
+      </tr>
+      <tr>
+        <td>7.25</td>
+        <td>2</td>
+        <td>52.5625</td>
+      </tr>
+      <tr>
+        <td>-5.5</td>
+        <td>3</td>
+        <td>-166.375</td>
+      </tr>
+      <tr>
+        <td>-5.5</td>
+        <td>2</td>
+        <td>30.25</td>
+      </tr>
+  </table>
+  <br>
+    <h3>SQRT Function</h3>
+      <p><strong> SQRT :-</strong> Calculates the square root of a number.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>SQRT(column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take an reference table named "numbers" to understand the SQRT Function :-</p>
+      <table border = "2">
+        <tr>
+          <td>Value</td>
+        </tr>
+        <tr>
+          <td>-10</td>
+        </tr>
+        <tr>
+          <td>6.25</td>
+        </tr>
+        <tr>
+          <td>5.5</td>
+        </tr>
+    </table>
+        <br>
+    <p>Now let's see how a query is written using SQRT function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT value, SQRT(value) AS Square_Root FROM numbers;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Value</td>
+          <td>Square_Root</td>
+        </tr>
+        <tr>
+          <td>-10</td>
+          <td>NULL</td>
+        </tr>
+        <tr>
+          <td>6.25</td>
+          <td>2.5</td>
+        </tr>
+        <tr>
+          <td>5.5</td>
+          <td>2.345207879911715</td>
+        </tr>
+    </table>
+    <br>
+    <h3>SIGN Function</h3>
+      <p><strong> SIGN :-</strong>  Returns the sign of a number as -1 for negative, 0 for zero, and 1 for positive.</p>
+      <div class="code-block">
+        <pre class="code-text"><p>SIGN(column_name)</p></pre>
+        <button class="copy-button" onclick="copyCode()">Copy Code</button>
+      </div>
+      <p>So let's take an reference table named "numbers" to understand the SIGN Function :-</p>
+      <table border = "2">
+        <tr>
+          <td>Value</td>
+        </tr>
+        <tr>
+          <td>-10</td>
+        </tr>
+        <tr>
+          <td>7.5</td>
+        </tr>
+        <tr>
+          <td>-5.5</td>
+        </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using SIGN function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Value, SIGN(Value) AS Sign_Value FROM numbers;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+      <p> So the output of the above code will be :-</p>
+      <table border = "2">
+        <tr>
+          <td>Value</td>
+          <td>Sign_Value</td>
+        </tr>
+        <tr>
+          <td>-10</td>
+          <td>-1</td>
+        </tr>
+        <tr>
+          <td>7.5</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>-5.5</td>
+          <td>-1</td>
+        </tr>
+    </table>
+    <br>
+  </ol>
+  <h3>What are Data Functions ?</h3>
+  <i><p>Date functions in MySQL are a category of functions used to work with date and time values. These functions allow you to manipulate, format, extract, and perform calculations on date and time data within your SQL queries. </p></i>
+  <p>Here are the main Date functions :-</p>
+  <ul>
+    <li>NOW</li>
+    <li>DATE</li>
+    <li>YEAR</li>
+    <li>MONTH</li>
+    <li>DAY</li>
+    <li>HOUR</li>
+    <li>MINUTE</li>
+    <li>SECOND</li>
+    <li>DATE_FORMAT</li>
+    <li>TIMESTAMPDIFF</li>
+    <li>DATE_ADD</li>
+    <li>CURDATE</li>
+    <li>CURTIME</li>
+  </ul>
+  <ol>
+    <h3>NOW Functions</h3>
+    <p><strong>NOW() :-</strong> Returns the current date and time.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT NOW() AS Current_Datetime;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So using the above Query we can get the current date and time, let's see an example, at present when i use this Query the output is like :- </p>
+    <table border = "2">
+      <tr>
+        <td>Current_Datetime</td>
+      </tr>
+      <tr>
+        <td>2023-09-07 19:36:24</td>
+      </tr>
+    </table>
+    <br>
+    <h3>DATE Functions</h3>
+    <p><strong>DATE() :-</strong> Extracts the date part (year, month, and day) from a datetime or timestamp.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>DATE(column_name)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So let's take a reference table named "Events" to understand the DATE function :-</p>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using DATE function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Event_Datetime, DATE(Event_Datetime) AS Event_Date FROM Events;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+        <td>Event_Date</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+        <td>2023-08-15</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+        <td>2023-09-20</td>
+      </tr>
+    </table>
+    <br>
+    <h3>YEAR Functions</h3>
+    <p><strong>YEAR() :-</strong> Extracts the year from a date or datetime.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>YEAR(column_name)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So let's take a reference table named "Events" to understand the YEAR function :-</p>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using YEAR function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Event_Datetime, YEAR(Event_Datetime) AS Event_Year FROM Events;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+        <td>Event_Date</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+        <td>2023</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+        <td>2023</td>
+      </tr>
+    </table>
+    <br>
+    <h3>MONTH Functions</h3>
+    <p><strong>MONTH() :-</strong> Extracts the month from a date or datetime.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>MONTH(column_name)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So let's take a reference table named "Events" to understand the MONTH function :-</p>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using MONTH function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Event_Datetime, MONTH(Event_Datetime) AS Event_MONTH FROM Events;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+        <td>Event_Date</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+        <td>9</td>
+      </tr>
+    </table>
+    <br>
+    <h3>DAY Functions</h3>
+    <p><strong>DAY() :-</strong> Extracts the day of the month from a date or datetime.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>DAY(column_name)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So let's take a reference table named "Events" to understand the DAY function :-</p>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using DAY function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Event_Datetime, DAY(Event_Datetime) AS Event_DAY FROM Events;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+        <td>Event_Date</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+        <td>20</td>
+      </tr>
+    </table>
+    <br>
+    <!--SOMETHING-->
+    <h3>HOUR Functions</h3>
+    <p><strong>HOUR() :-</strong> Extracts the hour from a datetime.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>HOUR(column_name)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So let's take a reference table named "Events" to understand the HOUR function :-</p>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using HOUR function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Event_Datetime, HOUR(Event_Datetime) AS Event_Hour FROM Events;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+        <td>Event_Hour</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+        <td>09</td>
+      </tr>
+    </table>
+    <br>
+    <h3>MINUTE Functions</h3>
+    <p><strong>MINUTE() :-</strong> Extracts the minute from a datetime.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>MINUTE(column_name)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So let's take a reference table named "Events" to understand the MINUTE function :-</p>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using MINUTE function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Event_Datetime, MINUTE(Event_Datetime) AS Event_Minute FROM Events;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+        <td>Event_Minute</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+        <td>30</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+        <td>45</td>
+      </tr>
+    </table>
+    <br>
+    <h3>SECOND Functions</h3>
+    <p><strong>SECOND() :-</strong> Extracts the second from a datetime.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SECOND(column_name)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So let's take a reference table named "Events" to understand the SECOND function :-</p>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:30</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using SECOND function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Event_Datetime, SECOND(Event_Datetime) AS Event_Second FROM Events;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+        <td>Event_Date</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+        <td>00</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:30</td>
+        <td>30</td>
+      </tr>
+    </table>
+    <br>
+    <h3>DATE_FORMAT Functions</h3>
+    <p><strong>DATE_FORMAT() :-</strong> Formats a date or datetime according to a specified format.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>DATE_FORMAT(column_name, format)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So let's take a reference table named "Orders" to understand the DATE_FORMAT function :-</p>
+    <table border = "2">
+      <tr>
+        <td>Order_Datetime</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:30</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using DATE_FORMAT function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Order_Datetime, DATE_FORMAT(Order_Datetime, '%Y-%m-%d') AS Formatted_Date FROM Orders;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Order_Datetime</td>
+        <td>Formatted_Date</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+        <td>2023-08-15</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:30</td>
+        <td>2023-09-20</td>
+      </tr>
+    </table>
+    <br>
+    <h3>TIMESTAMPDIFF Functions</h3>
+    <p><strong>TIMESTAMPDIFF() :-</strong> Calculates the difference between two timestamps in a specified unit (e.g., seconds, minutes, days).</p>
+    <div class="code-block">
+      <pre class="code-text"><p>TIMESTAMPDIFF(column_name, format)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So let's take a reference table named "Events" to understand the TIMESTAMPDIFF function :-</p>
+    <table border = "2">
+      <tr>
+        <td>Start_Time</td>
+        <td>End_Time</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+        <td>2023-08-15 15:45:00</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:00:00</td>
+        <td>2023-09-20 10:30:00</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using TIMESTAMPDIFF function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Start_Time, End_Time, TIMESTAMPDIFF(MINUTE, Start_Time, End_Time) AS Duration_Minutes FROM Events;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2" class = "custom-table">
+      <tr>
+        <td>Start_Time</td>
+        <td>End_Time</td>
+        <td>Duration_Minutes</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+        <td>2023-08-15 15:45:00</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:00:00</td>
+        <td>2023-09-20 10:30:00</td>
+        <td>90</td>
+      </tr>
+    </table>
+    <br>
+    <h3>DATE_ADD Functions</h3>
+    <p><strong>DATE_ADD() :-</strong> Adds a specified number of units (e.g., days, months) to a date or datetime.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>DATE_ADD(column_name, amount)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So let's take a reference table named "Tasks" to understand the DATE_ADD function :-</p>
+    <table border = "2">
+      <tr>
+        <td>Start_Date</td>
+      </tr>
+      <tr>
+        <td>2023-08-15</td>
+      </tr>
+      <tr>
+        <td>2023-09-20</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using DATE_ADD function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Start_Date, DATE_ADD(Start_Date, INTERVAL 7 DAY) AS Due_Date FROM Tasks;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Start_Date</td>
+        <td>Due_Date</td>
+      </tr>
+      <tr>
+        <td>2023-08-15</td>
+        <td>2023-08-22</td>
+      </tr>
+      <tr>
+        <td>2023-09-20</td>
+        <td>2023-09-27</td>
+      </tr>
+    </table>
+    <br>
+    <h3>CURDATE Functions</h3>
+    <p><strong>CURDATE() :-</strong> Returns the current date.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT CURDATE() AS CurrentDate;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So using the above Query we can get the current date, let's see an example, at present when i use this Query the output is like :-</p>
+    <table border = "2">
+      <tr>
+        <td>CurrentDate</td>
+      </tr>
+      <tr>
+        <td>2023-09-07</td>
+      </tr>
+    </table>
+    <br>
+    <h3>CURTIME Functions</h3>
+    <p><strong>CURTIME() :-</strong> Returns the current time.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT CURTIME() AS CurrentTime;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>So using the above Query we can get the current time, let's see an example, at present when i use this Query the output is like :-</p>
+    <table border = "2">
+      <tr>
+        <td>CurrentTime</td>
+      </tr>
+      <tr>
+        <td>23:58:46</td>
+      </tr>
+    </table>
+    <br>
+    </ol>
+    <h3>What are Conversion Functions ?</h3>
+    <i><p>Conversion functions in MySQL are used to convert data from one data type to another. They are essential for ensuring that data is in the correct format for operations, comparisons, or display purposes. MySQL provides various conversion functions to help you transform data from one type to another.</p></i>
+    <p>Here are the main Conversion Functions :-</p>
+    <ul>
+      <li>CAST</li>
+      <li>CONVERT</li>
+      <li>CONVERT_TZ</li>
+      <li>BINARY OPERATOR</li>
+      <li>HEX</li>
+      <li>UNHEX</li>
+      <li>JSON</li>
+    </ul>
+    <ol>
+    <h3>CAST Functions</h3>
+    <p><strong>CAST() :-</strong> Converts a value from one data type to another specified data type.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>CAST(column_name AS type)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>SO let's take a reference table named "Data" having a column named "Value" containing Numeric values as string :-</p>
+    <table border = "2">
+      <tr>
+        <td>Value</td>
+      </tr>
+      <tr>
+        <td>'42'</td>
+      </tr>
+      <tr>
+        <td>'3.14'</td>
+      </tr>
+      <tr>
+        <td>'100'</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using CAST function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Value, CAST(Value AS SIGNED) AS Numeric_Value FROM Data;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Value</td>
+        <td>Numeric_Value</td>
+      </tr>
+      <tr>
+        <td>'42'</td>
+        <td>42</td>
+      </tr>
+      <tr>
+        <td>'3.14'</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>'100'</td>
+        <td>100</td>
+      </tr>
+    </table>
+    <br>
+    <h3>CONVERT Functions</h3>
+    <p><strong>CONVERT() :-</strong> Converts a value from one character set to another character set.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>CONVERT(column_name USING type)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>SO let's take a reference table named "Text_Data" having a column named "Text" containing Numeric values as string :-</p>
+    <table border = "2">
+      <tr>
+        <td>Text</td>
+      </tr>
+      <tr>
+        <td>Hello, world!</td>
+      </tr>
+      <tr>
+        <td>ümlaut</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using CONVERT function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Text, CONVERT(text USING BINARY) AS Converted_Text FROM Text_Data;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Text</td>
+        <td>Converted_Text</td>
+      </tr>
+      <tr>
+        <td>Hello, world!</td>
+        <td>0x48656C6C6F2C20776F726C6421</td>
+      </tr>
+      <tr>
+        <td>ümlaut</td>
+        <td>0xC3BC6D6C617574</td>
+      </tr>
+    </table>
+    <br>
+    <h3>CONVERT_TZ Functions</h3>
+    <p><strong>CONVERT_TZ() :-</strong> Converts a datetime value from one time zone to another.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>CONVERT_TZ(column_name, UTC, AREA)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>SO let's take a reference table named "Events" having a column named "Event_Datetime" containing Numeric values as string :-</p>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using CONVERT_TZ function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT event_datetime, CONVERT_TZ(event_datetime, 'UTC', 'America/New_York') AS Converted_Datetime FROM events;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2">
+      <tr>
+        <td>Event_Datetime</td>
+        <td>Converted_Datetime</td>
+      </tr>
+      <tr>
+        <td>2023-08-15 14:30:00</td>
+        <td>2023-08-15 10:30:00</td>
+      </tr>
+      <tr>
+        <td>2023-09-20 09:45:00</td>
+        <td>2023-09-20 05:45:00</td>
+      </tr>
+    </table>
+    <br>
+    <h3>BINARY Functions</h3>
+    <p><strong>BINARY Operator :-</strong> Converts a string to a binary string (non-binary to binary).</p>
+    <div class="code-block">
+      <pre class="code-text"><p>BINARY column_name</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>SO let's take a reference table named "Text_Data" having a column named "Text" containing Numeric values as string :-</p>
+    <table border = "2">
+      <tr>
+        <td>Text</td>
+      </tr>
+      <tr>
+        <td>Hello, world!</td>
+      </tr>
+      <tr>
+        <td>ümlaut</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using BINARY function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Text, BINARY Text AS Binary_Value FROM Text_Data;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2" class="custom-table">
+      <tr>
+        <td>Text</td>
+        <td>Converted_Text</td>
+      </tr>
+      <tr>
+        <td>Hello, world!</td>
+        <td>0x48656C6C6F2C20776F726C6421</td>
+      </tr>
+      <tr>
+        <td>ümlaut</td>
+        <td>0xC3BC6D6C617574</td>
+      </tr>
+    </table>
+    <br>
+    <h3>HEX Functions</h3>
+    <p><strong>HEX() :-</strong> Converts a string to its hexadecimal representation.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>HEX(column_name)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>SO let's take a reference table named "Text_Data" having a column named "Text" containing Numeric values as string :-</p>
+    <table border = "2">
+      <tr>
+        <td>Text</td>
+      </tr>
+      <tr>
+        <td>Hello, world!</td>
+      </tr>
+      <tr>
+        <td>ümlaut</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using HEX function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Text, HEX(Text) AS Hexadecimal_Value FROM Text_Data;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2" class = "custom-table">
+      <tr>
+        <td>Text</td>
+        <td>Converted_Text</td>
+      </tr>
+      <tr>
+        <td>Hello, world!</td>
+        <td>48656C6C6F2C20776F726C6421</td>
+      </tr>
+      <tr>
+        <td>ümlaut</td>
+        <td>C3BC6D6C617574</td>
+      </tr>
+    </table>
+    <br>
+    <h3>UNHEX Functions</h3>
+    <p><strong>UNHEX() :-</strong> Converts a hexadecimal string to its original string value.</p>
+    <div class="code-block">
+      <pre class="code-text"><p>UNHEX(column_name)</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <p>SO let's take a reference table named "Unhex_Data" having a column named "Hex_Value" containing Numeric values as string :-</p>
+    <table border = "2">
+      <tr>
+        <td>Hex_Value</td>
+      </tr>
+      <tr>
+        <td>48656C6C6F2C20776F726C6421</td>
+      </tr>
+      <tr>
+        <td>C3BC6D6C617574</td>
+      </tr>
+    </table>
+    <br>
+    <p>Now let's see how a query is written using UNHEX function :-</p>
+    <div class="code-block">
+      <pre class="code-text"><p>SELECT Hex_Value, UNHEX(Hex_Value) AS Original_String FROM Unhex_Data;</p></pre>
+      <button class="copy-button" onclick="copyCode()">Copy Code</button>
+    </div>
+    <table border = "2" class = "custom-table">
+      <tr>
+        <td>Text</td>
+        <td>Original_String</td>
+      </tr>
+      <tr>
+        <td>48656C6C6F2C20776F726C6421</td>
+        <td>Hello, world!</td>
+      </tr>
+      <tr>
+        <td>C3BC6D6C617574</td>
+        <td>ümlaut</td>
+      </tr>
+    </table>
+    <br>
+  </ol>
+    <br>
+    <br>
+    <div class="button-container">
+        <button id="leftButton">&lt; Previous</button>
+        <button id="rightButton">Next &gt;</button>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("leftButton").addEventListener("click", function() {
+    window.location.href = "Predicates.html";
+  });
+
+  document.getElementById("rightButton").addEventListener("click", function() {
+    window.location.href = "all.html";
+  });
+</script>
+</body>
+</html>

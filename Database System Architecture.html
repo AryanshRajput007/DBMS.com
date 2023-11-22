@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: space-between; /* Align buttons with space between them */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+  <h1 class="hero-heading">Database System Architecture</h1>
+  <!-- <p class="hero-description">Explore and learn about the fascinating world of DBMS.</p> -->
+</div>
+
+<ul class="horizontal-nav">
+  <li><a href="all.html" target="_blank">Home</a></li>
+  <li><a href="index.html">DBMS</a></li>
+  <li><a href="all.html" target="_blank">OOPS</a></li>
+  <li><a href="all.html" target="_blank">DSA</a></li>
+</ul>
+
+<ul class="vertical-nav">
+  <li style="font-size: 26px;"><i class="fas fa-book"></i> Introduction</li>
+  <li><a href="Basics.html">Basics of DBMS</a></li>
+  <li><a href="Application of DBMS.html">Application of DBMS</a></li>
+  <li><a href="FPS.html">File Processing System</a></li>
+  <li><a href="Definitions.html">DBMS Terminologies</a></li>
+  <li><a href="ANSI and SPARC model.html">ANSI and SPARC model</a></li>
+  <li><a href="Client-Server Architecture.html">Client-Server Architecture</a></li>
+  <li><a href="User and DBA.html">User and DBA</a></li>
+  <li><a class="active" href="Database System Architecture.html">Database System Architecture</a></li>
+  <li style="font-size: 26px;"><i class="fas fa-book">SQL Queries</i></li>
+  <li><a href="SQL basics.html">SQL Basics</a></li>
+  <li><a href="SQL Commands.html">SQL Commands</a></li>
+  <li><a href="DDL Commands.html">DDL Commands</a></li>
+  <li><a href="DML Commands.html">DML Commands</a></li>
+  <li><a href="DCL Commands.html">DCL Commands</a></li>
+  <li><a href="TCL Commands.html">TCL Commands</a></li>
+  <li><a href="DQL Commands.html">DQL Commands</a></li>
+  <li><a href="Operators.html">Operators</a></li>
+  <li><a href="Predicates.html">Predicates</a></li>
+  <li><a href="Functions.html">Functions</a></li>
+</ul>
+<div class="content">
+
+    <h3>What is Database System Architecture ?</h3>
+    <p>Database System Architecture refers to the overall structure and organization of a Database Management System (DBMS) and its components. It encompasses the design principles, components, and relationships that govern how data is stored, accessed, managed, and processed within the database system. The architecture of a database system is crucial in determining its performance, scalability, security, and overall functionality.</p>
+    <h3>The database system architecture typically consists of three main components :-</h3>
+    <ol>
+        <strong><li>User Interface :-</strong> The user interface component allows users to interact with the database system. It can include various tools and interfaces, such as command-line interfaces, graphical user interfaces (GUIs), web-based interfaces, or application programming interfaces (APIs). Users can submit queries, perform updates, and retrieve information from the database through the user interface.</li>
+        <strong><li>Database Management System (DBMS) :-</strong> The DBMS acts as an intermediary between the user interface and the database. It provides the necessary software and services to manage the database efficiently. The DBMS is responsible for tasks such as data storage, data retrieval, data manipulation, query optimization, concurrency control, security enforcement, and transaction management. It interacts with the database through a set of internal modules and components.</li>
+        <strong><li>Database :-</strong> The database component represents the actual collection of data. It is a structured and organized repository that stores and manages data in a persistent manner. The database can consist of multiple tables, each containing rows and columns to store specific types of data. The DBMS interacts with the database to perform operations such as data insertion, modification, deletion, and retrieval. The database can be stored on various storage media, including hard drives, solid-state drives, or distributed storage systems.</li>
+    </ol>
+    <h3>The database system architecture may also include additional components, such as :-</h3>
+    <ul>
+        <strong><li>Query Optimizer :-</strong> This component is responsible for optimizing the execution plan of database queries to improve efficiency and performance.</li>
+        <strong><li>Backup and Recovery Manager :-</strong> It provides mechanisms for data backup, restore, and recovery in case of system failures, data corruption, or disasters.</li>
+        <strong><li>Security Manager :-</strong> This component enforces security measures, including user authentication, access control, and encryption, to protect the confidentiality and integrity of the data.</li>
+    </ul>
+
+    <img src="Database System Architecture.png" class="imgmain">
+    <br>
+    <br>
+    <h3>Or you can follow :-</h3>
+    <img src="Database System Architecture.jpg" class="imgmain">
+    <br>
+    <br>
+<!--    <div class="code-block">
+    <pre class="code-text">
+      create database DB;
+    </pre>
+    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+  </div>
+ -->
+ <div class="button-container">
+        <button id="leftButton">&lt; Previous</button>
+        <button id="rightButton">Next &gt;</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("leftButton").addEventListener("click", function() {
+    window.location.href = "User and DBA.html";
+  });
+
+  document.getElementById("rightButton").addEventListener("click", function() {
+    window.location.href = "all.html";
+  });
+</script>
+
+</body>
+</html>

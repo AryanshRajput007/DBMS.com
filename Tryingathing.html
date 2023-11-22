@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Blocks with Copy Button</title>
+    <style>
+        /* CSS for the code block */
+        .code-block {
+            position: relative;
+            margin-bottom: 20px; /* Add margin to separate code blocks */
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        /* CSS for the copy button */
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #07AA6D;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* CSS for the tick mark */
+        .tick-mark::before {
+            content: "\2714"; /* Unicode character for tick mark */
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="code-block">
+        <pre>
+            // Code Block 1 - Your code goes here
+            function helloWorld() {
+                console.log("Hello, world!");
+            }
+        </pre>
+        <button class="copy-button" onclick="copyCode(1)">Copy Code</button>
+    </div>
+
+    <div class="code-block">
+        <pre>
+            // Code Block 2 - Your code goes here
+            function anotherFunction() {
+                console.log("Another function.");
+            }
+        </pre>
+        <button class="copy-button" onclick="copyCode(2)">Copy Code</button>
+    </div>
+    <div class="code-block">
+        <pre>
+            // Code Block 2 - Your code goes here
+            function anotherFunction() {
+                console.log("Another function.");
+            }
+        </pre>
+        <button class="copy-button" onclick="copyCode(3)">📋 Copy Code</button>
+    </div>
+
+    <script>
+        function copyCode(blockNumber) {
+            const codeBlock = document.querySelector(`.code-block:nth-child(${blockNumber})`);
+            const codeText = codeBlock.querySelector('pre').textContent;
+            const copyButton = codeBlock.querySelector('.copy-button');
+
+            const textarea = document.createElement('textarea');
+            textarea.value = codeText;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            // Display "Code Copied" with a tick mark and revert to "Copy Code" after 2 seconds
+            copyButton.innerHTML = '<span class="tick-mark"></span> Code Copied';
+            setTimeout(() => {
+                copyButton.innerHTML = '📋 Copy Code';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

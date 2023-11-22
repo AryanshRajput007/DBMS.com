@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: space-between; /* Align buttons with space between them */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+  <h1 class="hero-heading">SQL Basics</h1>
+  <!-- <p class="hero-description">Explore and learn about the fascinating world of DBMS.</p> -->
+</div>
+
+<ul class="horizontal-nav">
+  <li><a href="all.html" target="_blank">Home</a></li>
+  <li><a href="index.html">DBMS</a></li>
+  <li><a href="all.html" target="_blank">OOPS</a></li>
+  <li><a href="all.html" target="_blank">DSA</a></li>
+</ul>
+
+<ul class="vertical-nav">
+  <li style="font-size: 26px;"><i class="fas fa-book">Introduction</i></li>
+  <li><a href="Basics.html" >Basics of DBMS</a></li>
+  <li><a href="Application of DBMS.html">Application of DBMS</a></li>
+  <li><a href="FPS.html">File Processing System</a></li>
+  <li><a href="Definitions.html">DBMS Terminologies</a></li>
+  <li><a href="ANSI and SPARC model.html">ANSI and SPARC model</a></li>
+  <li><a href="Client-Server Architecture.html">Client-Server Architecture</a></li>
+  <li><a href="User and DBA.html">User and DBA</a></li>
+  <li><a href="Database System Architecture.html">Database System Architecture</a></li>
+  <li style="font-size: 26px;"><i class="fas fa-book">SQL Queries</i></li>
+  <li><a href="SQL basics.html">SQL Basics</a></li>
+  <li><a href="SQL Commands.html">SQL Commands</a></li>
+  <li><a href="DDL Commands.html">DDL Commands</a></li>
+  <li><a href="DML Commands.html">DML Commands</a></li>
+  <li><a href="DCL Commands.html">DCL Commands</a></li>
+  <li><a href="TCL Commands.html">TCL Commands</a></li>
+  <li><a class="active" href="DQL Commands.html">DQL Commands</a></li>
+  <li><a href="Operators.html">Operators</a></li>
+  <li><a href="Predicates.html">Predicates</a></li>
+  <li><a href="Functions.html">Functions</a></li>
+</ul>
+
+<div class="content">
+    <h3> What are DQL Commands ?</h3>
+    <i><p>In MySQL, Data Query Language (DQL) commands are used to retrieve data from a database.</p>
+    <h3>Here are the main DQL command :-</h3>
+    <ul>
+        <em><li>Select </li></em>
+    </ul>
+    <h3>Select Command</h3>
+    <ul>
+        <li><strong>Select :-</strong> The SELECT statement is the core DQL command in MySQL. It retrieves data from one or more tables in a database.</li>
+        <p>Select command can be written is various ways, according to the requirements :-</p>
+        <ol>
+            <strong><li>Basic One :-</strong> This command is used to display a single or multiple column or you can use "*" in place of column name to display the whole table.</li>
+            <div class="code-block">
+                <pre class="code-text"> SELECT column_name from table_name;</pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div>
+            <p> Let's take an example of a table named "data" :-</p>
+            <table border = "2">
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Department</td>
+                    <td>Salary</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John</td>
+                    <td>IT</td>
+                    <td>60000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane</td>
+                    <td>HR</td>
+                    <td>55000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Mike</td>
+                    <td>Finance</td>
+                    <td>58000</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Isagi</td>
+                    <td>Manager</td>
+                    <td>57000</td>
+                </tr>
+            </table>
+            <br>
+            <li>Using condition and other operations :- </li>
+            <div class="code-block">
+                <pre class="code-text"><p>SELECT column1, column2, ...</p><p>FROM table_name</p><p>WHERE condition</p><p>ORDER BY column_name [ASC|DESC]</p><p>LIMIT number_of_rows;</p></pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div>
+            <p>So first let's see some basics concept that are frequently used with Select command :-</p>
+            <ol>
+                <li><strong>WHERE condition :-</strong> Filters rows based on a specified condition, like 'department = 'HR', to retrieve specific data.</li>
+                <li><strong>ORDER BY column_name :-</strong> Sorts query results based on the specified column, either ascending or descending.</li>
+                <li><strong>LIMIT number_of_rows :-</strong> Restricts the number of rows returned by the query to the specified count, like 'LIMIT 10'.</li>
+            </ol>
+            <p>So the following Queries will display the following outputs:-</p>
+            <ol>
+                <li>To display the whole table.</li>
+            <div class="code-block">
+                <pre class="code-text"> SELECT * from data;</pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div>
+            <p>So the output of the above code will be :-</p>
+            <table border = "2">
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Department</td>
+                    <td>Salary</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John</td>
+                    <td>IT</td>
+                    <td>60000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane</td>
+                    <td>HR</td>
+                    <td>55000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Mike</td>
+                    <td>Finance</td>
+                    <td>58000</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Isagi</td>
+                    <td>Manager</td>
+                    <td>57000</td>
+                </tr>
+            </table>
+            <br>
+            <li>To display specific column from the table.</li>
+            <div class="code-block">
+                <pre class="code-text"> SELECT Name,Department from data;</pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div>
+            <p>So the output of the above code will be :-</p>
+            <table border = "2">
+                <tr>
+                    <td>Name</td>
+                    <td>Department</td>
+                </tr>
+                <tr>
+                    <td>John</td>
+                    <td>IT</td>
+                </tr>
+                <tr>
+                    <td>Jane</td>
+                    <td>HR</td>
+                </tr>
+                <tr>
+                    <td>Mike</td>
+                    <td>Finance</td>
+                </tr>
+                <tr>
+                    <td>Isagi</td>
+                    <td>Manager</td>
+                </tr>
+            </table>
+            <br>
+            <li>To display data where the salary is greater than or equals to 57000.</li>
+            <div class="code-block">
+                <pre class="code-text"> SELECT * from data WHERE salary >= 57000;</pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div>
+            <p>So the output of the above code will be :-</p>
+            <table border = "2">
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Department</td>
+                    <td>Salary</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John</td>
+                    <td>IT</td>
+                    <td>60000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Mike</td>
+                    <td>Finance</td>
+                    <td>58000</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Isagi</td>
+                    <td>Manager</td>
+                    <td>57000</td>
+                </tr>
+            </table>
+            <br>
+            <li>To display table in ascending order of the salary column.</li>
+            <div class="code-block">
+                <pre class="code-text"> SELECT * from data ORDER BY salary ASC;</pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div>
+            <p>So the output of the above code will be :-</p>
+            <table border = "2">
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Department</td>
+                    <td>Salary</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane</td>
+                    <td>HR</td>
+                    <td>55000</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Isagi</td>
+                    <td>Manager</td>
+                    <td>57000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Mike</td>
+                    <td>Finance</td>
+                    <td>58000</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John</td>
+                    <td>IT</td>
+                    <td>60000</td>
+                </tr>
+            </table>
+            <br>
+            <li>To display only 3 Rows of the table.</li>
+            <div class="code-block">
+                <pre class="code-text"> SELECT * from data LIMIT 3;</pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div>
+            <p>So the output of the above code will be :-</p>
+            <table border = "2">
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Department</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>John</td>
+                <td>IT</td>
+                <td>60000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane</td>
+                <td>HR</td>
+                <td>55000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Mike</td>
+                <td>Finance</td>
+                <td>58000</td>
+            </tr>
+            </table>
+            <br>
+            <li>To display Name, Department and Salary from the table where salary is greater than or equals to 57000 , and the table is arranged in descending order of the salary column and only 2 rows are displayed.</li>
+            <div class="code-block">
+                <pre class="code-text">SELECT Name,Department,Salary from data<p>WHERE salary >= 57000</p><p>ORDER BY salary DESC</p><p>LIMIT 2;</p></pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div>
+            <p>So the output of the above code will be :-</p>
+            <table border = "2">
+                <tr>
+                    <td>Name</td>
+                    <td>Department</td>
+                    <td>Salary</td
+                </tr>
+                <tr>
+                    <td>John</td>
+                    <td>IT</td>
+                    <td>60000</td>
+                </tr>
+                <tr>
+                    <td>Mike</td>
+                    <td>Finance</td>
+                    <td>58000</td>
+                </tr>
+            </table>
+            </ol>
+        </ol>
+        <p>We can use select command in different ways using Logical operators,Relational operators and Ralational Algebra Operations.</p>
+    </ul>
+    <br>
+    <br>
+    <div class="button-container">
+        <button id="leftButton">&lt; Previous</button>
+        <button id="rightButton">Next &gt;</button>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("leftButton").addEventListener("click", function() {
+    window.location.href = "TCL Commands.html";
+  });
+
+  document.getElementById("rightButton").addEventListener("click", function() {
+    window.location.href = "Operators.html";
+  });
+</script>
+</body>
+</html>

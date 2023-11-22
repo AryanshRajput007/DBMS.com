@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: space-between; /* Align buttons with space between them */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+  <h1 class="hero-heading">E-R Model</h1>
+  <!-- <p class="hero-description">Explore and learn about the fascinating world of DBMS.</p> -->
+</div>
+
+<ul class="horizontal-nav">
+  <li><a href="all.html" target="_blank">Home</a></li>
+  <li><a href="index.html">DBMS</a></li>
+  <li><a href="all.html" target="_blank">OOPS</a></li>
+  <li><a href="all.html" target="_blank">DSA</a></li>
+</ul>
+
+<ul class="vertical-nav">
+  <li style="font-size: 26px;"><i class="fas fa-book">Introduction</i></li>
+  <li><a href="Basics.html" >Basics of DBMS</a></li>
+  <li><a href="Application of DBMS.html">Application of DBMS</a></li>
+  <li><a href="FPS.html">File Processing System</a></li>
+  <li><a href="Definitions.html">DBMS Terminologies</a></li>
+  <li><a href="ANSI and SPARC model.html">ANSI and SPARC model</a></li>
+  <li><a href="Client-Server Architecture.html">Client-Server Architecture</a></li>
+  <li><a href="User and DBA.html">User and DBA</a></li>
+  <li><a href="Database System Architecture.html">Database System Architecture</a></li>
+  <li style="font-size: 26px;"><i class="fas fa-book">SQL Queries</i></li>
+  <li><a href="SQL basics.html">SQL Basics</a></li>
+  <li><a href="SQL Commands.html">SQL Commands</a></li>
+  <li><a href="DDL Commands.html">DDL Commands</a></li>
+  <li><a href="DML Commands.html">DML Commands</a></li>
+  <li><a href="DCL Commands.html">DCL Commands</a></li>
+  <li><a href="TCL Commands.html">TCL Commands</a></li>
+  <li><a href="DQL Commands.html">DQL Commands</a></li>
+  <li><a href="Operators.html">Operators</a></li>
+  <li><a class="active" href="Predicates.html">Predicates</a></li>
+  <li><a href="Functions.html">Functions</a></li>
+</ul>
+
+<div class="content">
+    <h3>What is ER Model/Diagram ?</h3>
+    <i><p>The Entity-Relationship (ER) model is a visual representation of the data structure in a database. It is a widely used tool in database design and conceptual modeling, allowing designers to describe the entities, attributes, relationships, and constraints within a database system.</p></i>
+    <img src="ER Diagram.jpg" class="imgmain" alt="Entity Relation Diagram">
+    <p>Here are the key components of the ER Diagram listed below :- </p>
+    <ul>
+      <ol>
+      <li><strong>Entities</strong>
+      <ul>
+        <li>Entities represent real-world objects or concepts that are relevant to the database. </li>
+        <li>Examples of Entities might include "Customers", "Product", or "Employees".</li>
+        <li>Entities are typically represented as rectangles in ER diagrams.</li>
+      </ul>
+      <img src="Entity.jpg" class="imgmain" alt="Entity">
+      </li>
+      <li><strong>Attributes</strong>
+      <ul>
+        <li>Attributes are properties or characteristics that describe an entity.</li>
+        <li>For example, a "Customer" entity might have attributes like "CustomerID," "Name," and "Email."</li>
+        <li>Attributes are typically depicted as ovals connected to their respective entities.</li>
+      </ul>
+      <img src="Attributes.jpg" class="imgmain" alt="Attributes">
+      </li>
+      <li><strong>Relationships</strong>
+      <ul>
+        <li>Relationships describe how entities are related to each other in the database.</li>
+        <li>They indicate how data in one entity is connected to data in another entity.</li>
+        <li>Relationships are often represented as lines connecting entities, with labels that describe the nature of the relationship.</li>
+        <li>For example, in the library database, you might have a relationship set called "Borrowed," which captures the borrowing relationships between "Customers" (entities) and "Books" (entities). The "Borrowed" table could include attributes like "Borrow Date" and "Due Date."</li>
+      </ul>
+      <img src="Relationship.jpg" class="imgmain" alt="Relationship">
+      </li>
+      <li><strong>Entity Set</strong>
+      <ul>
+        <li>An entity set represents a collection of similar entities, which are objects or concepts from the real world that share common characteristics or attributes</li>
+        <li>Entity sets correspond to tables in a relational database, where each row (tuple) in the table represents an entity instance, and each column represents an attribute of the entity type.</li>
+        <li>For example, in a database for a library, you might have an entity set called "Books," where each entity instance represents a unique book, and attributes could include "Title," "Author," "ISBN," and "Publication Year."</li>
+      </ul>
+      </li>
+      <li><strong>Relationship Set</strong>
+      <ul>
+        <li>A relationship set represents a collection of similar relationships between entities. </li>
+        <li>Relationships describe how entities are connected or associated with each other.</li>
+        <li></li>
+      </ul>
+      </li>
+      <li><strong>Cardinality</strong>
+      <ul>
+        <li>Cardinality specifies how many instances of one entity are associated with how many instances of another entity in a relationship.</li>
+        <li>Common cardinality notations include "one-to-one" (1:1), "one-to-many" (1:N), and "many-to-many" (M:N).</li>
+      </ul>
+      </li>
+      <li><strong>Attributes and Relationships</strong>
+      <ul>
+        <li>Relationships can also have attributes, which are properties that apply specifically to the relationship itself.</li>
+        <li>These attributes are often represented in a diamond shape connected to the relationship line.</li>
+      </ul>
+      </li>
+      <li><strong>Key Attributes</strong>
+      <ul>
+        <li>Key attributes are attributes that uniquely identify instances of an entity.</li>
+        <li>In the ER model, they are often underlined or marked in some way to indicate their importance.</li>
+      </ul>
+      </li>
+      <li><strong>Participation Constraints</strong>
+      <ul>
+        <li>Participation constraints specify whether an entity's participation in a relationship is mandatory (total participation) or optional (partial participation).</li>
+      </ul>
+      </li>
+      <li><strong>Weak Entities</strong>
+      <ul>
+        <li>Weak entities are entities that cannot be uniquely identified by their attributes alone and depend on a related entity, known as the owner entity, for identification.</li>
+      </ul>
+      </li>
+    </ol>
+    </ul>
+    <p><strong>Note :- </strong>There are some concept that we will discuss later in the future pages.</p>
+        <br>
+    <br>
+    <div class="button-container">
+        <button id="leftButton">&lt; Previous</button>
+        <button id="rightButton">Next &gt;</button>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("leftButton").addEventListener("click", function() {
+    window.location.href = "Functions.html";
+  });
+
+  document.getElementById("rightButton").addEventListener("click", function() {
+    window.location.href = "all.html";
+  });
+</script>
+</body>
+</html>

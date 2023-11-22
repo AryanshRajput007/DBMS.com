@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: space-between; /* Align buttons with space between them */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-section">
+  <h1 class="hero-heading">SQL Basics</h1>
+  <!-- <p class="hero-description">Explore and learn about the fascinating world of DBMS.</p> -->
+</div>
+
+<ul class="horizontal-nav">
+  <li><a href="all.html" target="_blank">Home</a></li>
+  <li><a href="index.html">DBMS</a></li>
+  <li><a href="all.html" target="_blank">OOPS</a></li>
+  <li><a href="all.html" target="_blank">DSA</a></li>
+</ul>
+
+<ul class="vertical-nav">
+  <li style="font-size: 26px;"><i class="fas fa-book">Introduction</i></li>
+  <li><a href="Basics.html" >Basics of DBMS</a></li>
+  <li><a href="Application of DBMS.html">Application of DBMS</a></li>
+  <li><a href="FPS.html">File Processing System</a></li>
+  <li><a href="Definitions.html">DBMS Terminologies</a></li>
+  <li><a href="ANSI and SPARC model.html">ANSI and SPARC model</a></li>
+  <li><a href="Client-Server Architecture.html">Client-Server Architecture</a></li>
+  <li><a href="User and DBA.html">User and DBA</a></li>
+  <li><a href="Database System Architecture.html">Database System Architecture</a></li>
+  <li style="font-size: 26px;"><i class="fas fa-book">SQL Queries</i></li>
+  <li><a href="SQL basics.html">SQL Basics</a></li>
+  <li><a href="SQL Commands.html">SQL Commands</a></li>
+  <li><a class="active" href="DDL Commands.html">DDL Commands</a></li>
+  <li><a href="DML Commands.html">DML Commands</a></li>
+  <li><a href="DCL Commands.html">DCL Commands</a></li>
+  <li><a href="TCL Commands.html">TCL Commands</a></li>
+  <li><a href="DQL Commands.html">DQL Commands</a></li>
+  <li><a href="Operators.html">Operators</a></li>
+  <li><a href="Predicates.html">Predicates</a></li>
+  <li><a href="Functions.html">Functions</a></li>
+</ul>
+
+<div class="content">
+    <h3> What are DDL Commands ?</h3>
+    <i><p>DDL stands for Data Definition Language. DDL commands are used in SQL to define, manage, and modify database objects, such as tables, </i>indexes, and constraints. These commands allow users to create, alter, and drop database objects and define their structure and characteristics</p>
+    <h3>Here are the main DDL commands :-</h3>
+    <ul>
+        <em><li>Create </li></em>
+        <em><li>Alter </li></em>
+        <em><li>Drop</li></em>
+        <em><li>Truncate</li></em>
+    </ul>
+    <h3>Create Command</h3>
+    <ul>
+        <li><strong>Create Database :-</strong> <p>Used to create a new database.</p>
+            <div class="code-block">
+                <pre class="code-text">create database database_name; </pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div>
+        </li>
+        <li>Create Table :- Used to create a new table along with its columns and data types.
+            <div class="code-block">
+                <pre class="code-text"><p>CREATE TABLE table_name (</p><p>column1 datatype constraints,</p><p>column2 datatype constraints,</p><p>...</p><p>);</p></pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div>             
+        </li>
+        <h3>Drop Command</h3>
+        <ul>
+            <li>Drop Database :- <p>Used to delete an entire database along with all its tables and data.</p></li>
+            <div class="code-block">
+                <pre class="code-text"><p>DROP DATABASE database_name;</p></pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div> 
+            <li>Drop Table :- <p>Used to delete an entire table along with its data and structure.</p></li>
+            <div class="code-block">
+                <pre class="code-text"><p>DROP TABLE table_name;</p></pre>
+                <button class="copy-button" onclick="copyCode()">Copy Code</button>
+            </div>
+        </ul>
+        <h3>Alter Command</h3>
+        <ul>
+            <li>ALter Table :- <p>Used to modify the structure of an existing table.</p></li>
+            <ul>
+                <li>Add a new column</li>
+                <div class="code-block">
+                    <pre class="code-text"><p>ALTER TABLE table_name ADD column_name datatype constraints;</p></pre>
+                    <button class="copy-button" onclick="copyCode(1)">Copy Code</button>
+                </div>                   
+                <li>Modify a column</li>
+                <div class="code-block">
+                    <pre class="code-text"><p>ALTER TABLE table_name MODIFY column_name new_datatype constraints;</p></pre>
+                    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+                </div>
+                <li>Rename a column</li>
+                <div class="code-block">
+                    <pre class="code-text"><p>ALTER TABLE table_name CHANGE old_column_name new_column_name datatype constraints;</p></pre>
+                    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+                </div>
+                <li>Drop a column</li>
+                <div class="code-block">
+                    <pre class="code-text"><p>ALTER TABLE table_name DROP column_name;</p></pre>
+                    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+                </div>
+            </ul> 
+            <h3>Truncate Command</h3>
+            <ul>
+                <li>Truncate Table :- <p>This command is used to quickly delete all the data from a table.</p></li>
+                <div class="code-block">
+                    <pre class="code-text"><p>TRUNCATE TABLE table_name;</p></pre>
+                    <button class="copy-button" onclick="copyCode()">Copy Code</button>
+                </div>
+            </ul>
+        </ul>
+    </ul>
+    <br>
+    <br>
+ <div class="button-container">
+        <button id="leftButton">&lt; Previous</button>
+        <button id="rightButton">Next &gt;</button>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("leftButton").addEventListener("click", function() {
+    window.location.href = "SQL Commands.html";
+  });
+
+  document.getElementById("rightButton").addEventListener("click", function() {
+    window.location.href = "DML Commands.html";
+  });
+</script>
+</body>
+</html>

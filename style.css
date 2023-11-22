@@ -1,0 +1,277 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.hero-section {
+  background-image: url('Code.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.hero-heading {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 24px;
+}
+
+.vertical-nav {
+list-style-type: none;
+margin: 0;
+padding: 0;
+font-size: 18px;
+width: 13%;
+background-color: #04AA6D;
+position: fixed;
+top: 40px;
+left: 0;
+height: calc(100% - 40px);
+overflow: auto;
+}
+
+.vertical-nav li a {
+display: block;
+color: white;
+padding: 8px 16px;
+text-decoration: none;
+transition: background-color 0.3s ease;
+}
+
+.vertical-nav li a.active {
+background-color: #038557;
+}
+
+.vertical-nav li a:hover:not(.active) {
+background-color: #555;
+}
+
+.horizontal-nav {
+list-style-type: none;
+margin: 0;
+padding: 0;
+font-size: 22px;
+background-color: black;
+overflow: auto;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 1;
+}
+
+.horizontal-nav li {
+display: inline-block;
+}
+
+.horizontal-nav li a {
+display: block;
+color: white;
+padding: 8px 16px;
+text-decoration: none;
+transition: background-color 0.3s ease;
+}
+
+.horizontal-nav li a.active {
+background-color: transparent;
+}
+
+.horizontal-nav li a:hover:not(.active) {
+background-color: #555;
+}
+
+.content {
+margin-top: 40px;
+margin-left: 15%; /* Add left margin to account for the vertical navigation bar width */
+padding: 20px;
+background-color: #fff;
+border-radius: 5px;
+z-index: 0;
+}
+
+.content h2 {
+font-size: 40px;
+text-align: center;
+text-decoration: underline;
+margin-bottom: 30px;
+}
+
+.content h3 {
+font-size: 28px;
+margin-bottom: 20px;
+}
+
+.content p,
+.content ol,
+.content ul {
+font-size: 24px;
+line-height: 1.6;
+margin-bottom: 20px;
+}
+
+table {
+  width: 45%; /* Set the width of the table to 80% of its container */
+  margin: 0  auto; /* This will center the table horizontally */
+  text-align: center;
+}
+
+.custom-table {
+  width: 70%;
+}
+
+/* CSS for the code block */
+.code-block {
+position: relative;
+margin-bottom: 20px; /* Add margin to separate code blocks */
+}
+
+pre {
+background-color: #f4f4f4;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+overflow-x: auto;
+}
+
+/* CSS for the copy button */
+.copy-button {
+position: absolute;
+top: 10px;
+right: 10px;
+background-color: #07AA6D;
+color: #fff;
+border: none;
+padding: 5px 10px;
+cursor: pointer;
+border-radius: 5px;
+display: flex;
+align-items: center;
+}
+
+/* CSS for the tick mark */
+.tick-mark::before {
+content: "\2714"; /* Unicode character for tick mark */
+margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+
+body {
+  font-size: 16px; /* Adjust the base font size for better readability on smaller screens */
+}
+
+.hero-section {
+  padding: 30px 0; /* Reduce padding for smaller screens */
+}
+
+.hero-heading {
+  font-size: 36px; /* Decrease font size for smaller screens */
+  margin-bottom: 15px; /* Reduce margin for smaller screens */
+}
+
+.vertical-nav {
+  width: 100%;
+  position: static; /* Change to static positioning for mobile */
+  height: auto; /* Allow the menu to grow vertically as needed */
+}
+
+.vertical-nav li {
+  text-align: center; /* Center the menu items for mobile */
+  padding: 10px 0; /* Increase padding for touch-friendly spacing */
+}
+
+.vertical-nav li a {
+  display: inline-block; /* Make menu items display horizontally */
+  width: 100%; /* Full-width menu items */
+  padding: 10px 0; /* Adjust padding for touch-friendly spacing */
+}
+
+/* .horizontal-nav {
+  text-align: center; 
+}
+
+.horizontal-nav li {
+  display: inline-block; 
+  margin-right: 10px; 
+}
+
+.horizontal-nav li:last-child {
+  margin-right: 0; 
+} */
+
+/*.horizontal-nav {
+  display: block;
+  text-align: center;
+}
+
+.horizontal-nav li {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.horizontal-nav li:last-child {
+  margin-bottom: 0;
+}*/
+
+.content {
+  margin-left: 0;
+  padding: 10px; /* Reduce padding for smaller screens */
+}
+
+.content h2 {
+  font-size: 32px; /* Decrease font size for smaller screens */
+  margin-bottom: 20px; /* Reduce margin for smaller screens */
+}
+
+.content h3 {
+  font-size: 24px; /* Decrease font size for smaller screens */
+  margin-bottom: 15px; /* Reduce margin for smaller screens */
+}
+
+.content p,
+.content ol,
+.content ul {
+  font-size: 18px; /* Decrease font size for smaller screens */
+  margin-bottom: 15px; /* Reduce margin for smaller screens */
+}
+
+/* Adjust the image for smaller screens */
+.imgmain {
+  max-width: 100%;
+  height: auto;
+}
+
+pre {
+  font-size: 16px; /* Decrease font size for better readability on smaller screens */
+  padding: 8px; /* Reduce padding for smaller screens */
+}
+
+.copy-button {
+  top: 5px; /* Adjust the button's position for smaller screens */
+  right: 5px; /* Adjust the button's position for smaller screens */
+  padding: 3px 6px; /* Reduce button padding for smaller screens */
+}
+
+.button-container {
+  flex-direction: column; /* Stack buttons vertically on smaller screens */
+}
+
+button {
+  width: 100%; /* Make buttons full width for better mobile usability */
+  margin-bottom: 10px; /* Add spacing between stacked buttons */
+}
+}
+
+.imgmain {
+display: block;
+margin-left: auto;
+margin-right: auto;
+max-width: 100%; /* Ensure image responsiveness outside the media query */
+}
+
+

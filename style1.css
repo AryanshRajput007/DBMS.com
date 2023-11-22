@@ -1,0 +1,186 @@
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .hero-section {
+      position: relative;
+      color: #fff;
+      padding: 50px 0;
+      text-align: center;
+      background-image: url('Code.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      padding-top: 50px;
+    }
+
+    .vertical-nav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      width: 13%;
+      background-color: #04AA6D;
+      position: fixed;
+      top: 265px;
+      left: 0.55%;
+      height: calc(100% - 265px); /* Adjust the height to fit the screen */
+      overflow: auto;
+    }
+
+
+    .vertical-nav li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+
+    .vertical-nav li a.active {
+      background-color: #038557;
+      color: white;
+    }
+
+    .vertical-nav li a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+
+    .horizontal-nav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      font-size: 22px;
+      background-color: black;
+      overflow: auto;
+      position: relative; /* Change from "fixed" to "relative" */
+      width: 100%;
+    }
+
+    .horizontal-nav li {
+      display: inline-block;
+    }
+
+    .horizontal-nav li a {
+      display: block;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+
+    .horizontal-nav li a.active {
+      background-color: transparent;
+    }
+
+    .horizontal-nav li a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+
+   .content {
+     margin-top: 40px;
+     margin-left: 3%; /* Add left margin to account for the vertical navigation bar width */
+     padding: 20px;
+     background-color: #fff;
+     border-radius: 5px;
+     /* Add padding to the left side of content to prevent overlap with vertical navbar */
+     padding-left: 13%; /* Same width as the vertical navigation bar */
+   }
+
+
+    .content h2 {
+      font-size: 40px;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    .content h3 {
+      font-size: 32px;
+    }
+
+    .content p {
+      font-size: 28px;
+    }
+
+    .content ol {
+      font-size: 28px;
+    }
+
+    .content ul {
+      font-size: 28px;
+    }
+
+    .code-block {
+      margin-top: 60px; /* Add a margin to create space between code block and horizontal nav bar */
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      position: relative;
+    }
+
+    .code-text {
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+
+    .copy-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #04AA6D;
+      color: #fff;
+      padding: 8px 12px;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .copy-button:hover {
+      background-color: #038557;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: flex-end; /* Align button to the right side */
+      margin-top: 10px; /* Add some margin between the content and the button */
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* Additional styles for buttons */
+    .button-container {
+      /* ... (unchanged) */
+      margin-top: 20px;
+    }
+
+    /* Additional styles for responsive design */
+    @media (max-width: 768px) {
+      .vertical-nav {
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+
+      .content {
+        margin-left: 0;
+      }
+    }
